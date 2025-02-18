@@ -2,27 +2,47 @@ extends CharacterBody2D
 
 
 @export var SPEED : float = 300.0
+@export var sneak_speed : float = 85
+@export var slow_time : float = 1
 const JUMP_VELOCITY = -400.0
 
+@onready var anim : AnimatedSprite2D = $AnimatedSprite2D
+
+func _ready() -> void:
+	anim.play("idle")
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
 	movement(delta)
-	move_and_slide()
+	
+	move_and_collide(velocity)
 
 func movement(delta : float) -> void:
-	pass
+	var vel : Vector2 = Vector2.ZERO
+	
+	if Input.is_action_pressed("left"):
+		vel.x -= 1
+		anim.flip_h = true
+	if Input.is_action_pressed("down"):
+		vel.y += 1
+	if Input.is_action_pressed("up"):
+		vel.y -= 1
+	if Input.is_action_pressed("right"):
+		vel.x += 1
+		anim.flip_h = false
+	var is_sneaking : bool = Input.is_action_pressed("sneak")
+	var speed : float = SPEED
+	if vel.length() <= 0.1:
+		vel = Vector2.ZERO
+		var current_animation : String = anim.animation as String
+		var test : StringName = StringName("idle")
+		
+		anim.play("idle")
+			
+	elif is_sneaking:
+		speed = sneak_speed
+		anim.play("sneak")
+	else:
+		anim.play("walk") 
+	vel = vel.normalized() * speed * delta
+	velocity = vel
