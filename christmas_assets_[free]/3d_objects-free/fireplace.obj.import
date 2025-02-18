@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ywtqk12hcyyj"
+path="res://.godot/imported/fireplace.obj-2f8f5d1afeb2ba53f2a093dbdcde2eb2.mesh"
+
+[deps]
+
+files=["res://.godot/imported/fireplace.obj-2f8f5d1afeb2ba53f2a093dbdcde2eb2.mesh"]
+
+source_file="res://christmas_assets_[free]/3d_objects-free/fireplace.obj"
+dest_files=["res://.godot/imported/fireplace.obj-2f8f5d1afeb2ba53f2a093dbdcde2eb2.mesh", "res://.godot/imported/fireplace.obj-2f8f5d1afeb2ba53f2a093dbdcde2eb2.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
