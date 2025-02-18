@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://c12kt4gwq2ije"]
+
+[ext_resource type="PackedScene" uid="uid://c72kqwh8t2m86" path="res://Assets/3DModels/smolGrinch/grinch/scene.gltf" id="1_hwms6"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_hwms6")]
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Sketchfab_model/Walking_fbx/Object_2/RootNode/Object_4" index="0"]
+bones/1/position = Vector3(0.476903, 17.2604, -0.0419083)
+bones/1/rotation = Quaternion(0.0179456, 0.0329492, -0.00426301, 0.999287)
+bones/2/rotation = Quaternion(-0.00121194, 0.00388134, 0.00877368, 0.999953)
+bones/3/rotation = Quaternion(0.0095316, 0.00629977, -0.00388776, 0.999927)
+bones/4/rotation = Quaternion(-0.0296048, 0.00638012, -0.00845507, 0.999506)
+bones/5/rotation = Quaternion(-0.0164343, -0.00949093, -0.0124548, 0.999742)
+bones/6/rotation = Quaternion(0.00195594, -0.036095, 0.00699395, 0.999322)
+bones/8/rotation = Quaternion(-0.60554, -0.441651, 0.396452, -0.530181)
+bones/9/rotation = Quaternion(0.582471, 0.092598, -0.112955, 0.799621)
+bones/10/rotation = Quaternion(0.0723804, -0.476514, 0.263138, 0.835736)
+bones/12/rotation = Quaternion(0.534078, -0.457682, 0.471829, 0.531663)
+bones/13/rotation = Quaternion(0.542356, -0.211856, -0.0641274, 0.810465)
+bones/14/rotation = Quaternion(0.0124594, 0.423905, -0.288806, 0.858336)
+bones/16/rotation = Quaternion(-0.0133696, 0.426818, 0.90238, 0.0579472)
+bones/17/rotation = Quaternion(-0.489287, -0.0257841, 0.109206, 0.864874)
+bones/18/rotation = Quaternion(0.362447, -0.13804, 0.0245413, 0.921399)
+bones/19/rotation = Quaternion(0.457888, -0.0829069, 0.036024, 0.884402)
+bones/21/rotation = Quaternion(-0.113302, -0.153584, 0.977921, -0.0851159)
+bones/22/rotation = Quaternion(-0.164448, -0.030722, -0.0439493, 0.984927)
+bones/23/rotation = Quaternion(0.612036, 0.108632, -0.0722032, 0.779999)
+bones/24/rotation = Quaternion(0.458109, 0.101219, -0.044282, 0.882003)
+
+[node name="AnimationPlayer" parent="." index="1"]
+speed_scale = 4.0
