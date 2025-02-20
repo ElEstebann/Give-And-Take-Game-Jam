@@ -38,3 +38,4 @@ func randomize_home() -> void:
 	for item in home_list:
 		item.visible = false
 	home_list[randi_range(0,home_list.size()-1)].visible = true
+	print_debug("House Randomized")

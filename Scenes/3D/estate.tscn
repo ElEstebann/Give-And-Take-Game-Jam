@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3 uid="uid://bqbo5bjedt1t"]
+
+[ext_resource type="PackedScene" uid="uid://c4vfgmasxvoq7" path="res://Scenes/3D/random_house.tscn" id="1_ky1y3"]
+[ext_resource type="Script" path="res://Scripts/3d/random_estate.gd" id="1_t7y7u"]
+[ext_resource type="PackedScene" uid="uid://dpc7j0yqchso6" path="res://Assets/3DModels/kenney_city-kit-suburban/Models/GLTF format/path_tilesLong.glb" id="2_p7sq7"]
+[ext_resource type="PackedScene" uid="uid://cxbgdgsl01wn4" path="res://Assets/3DModels/kenney_city-kit-suburban/Models/GLTF format/fence_wide.glb" id="3_v0q6b"]
+[ext_resource type="Script" path="res://Scripts/3d/random_tree_size.gd" id="4_264mw"]
+[ext_resource type="PackedScene" uid="uid://bnvlltnnnurxa" path="res://Assets/3DModels/kenney_holiday-kit/Models/GLB format/tree-snow-b.glb" id="4_tlcs1"]
+[ext_resource type="PackedScene" uid="uid://d1ek4e86oqlyc" path="res://Assets/3DModels/kenney_holiday-kit/Models/GLB format/tree.glb" id="5_uebqb"]
+
+[node name="Estate" type="Node3D"]
+transform = Transform3D(0.999391, 0.0348995, 0, -0.0348995, 0.999391, 0, 0, 0, 1, 0.675, 0.17, 0)
+script = ExtResource("1_t7y7u")
+
+[node name="RandomHouse" parent="." instance=ExtResource("1_ky1y3")]
+transform = Transform3D(-3.49691e-07, 0, 8, 0, 8, 0, -8, 0, -3.49691e-07, -17.1999, 0, -0.262032)
+
+[node name="fence_wide2" parent="." instance=ExtResource("3_v0q6b")]
+transform = Transform3D(-8.00305e-07, -0.279196, 44.7377, -2.79473e-08, 7.99513, 1.56228, -18.32, 0, -1.95674e-06, -17.0117, -0.764165, 0.005)
+
+[node name="Tiles" type="Node3D" parent="."]
+
+[node name="path_tilesLong2" parent="Tiles" instance=ExtResource("2_p7sq7")]
+transform = Transform3D(8, 0, 0, 0, 16, 0, 0, 0, 8, -5.81572, -1.49012e-08, -0.117904)
+
+[node name="path_tilesLong7" parent="Tiles" instance=ExtResource("2_p7sq7")]
+transform = Transform3D(8, 0, 0, 0, 16, 0, 0, 0, 8, -5.81572, -1.49012e-08, -3.31618)
+
+[node name="path_tilesLong8" parent="Tiles" instance=ExtResource("2_p7sq7")]
+transform = Transform3D(8, 0, 0, 0, 16, 0, 0, 0, 8, -5.81572, -1.49012e-08, -6.51271)
+
+[node name="path_tilesLong9" parent="Tiles" instance=ExtResource("2_p7sq7")]
+transform = Transform3D(8, 0, 0, 0, 16, 0, 0, 0, 8, -5.81572, -1.49012e-08, -9.71084)
+
+[node name="path_tilesLong10" parent="Tiles" instance=ExtResource("2_p7sq7")]
+transform = Transform3D(8, 0, 0, 0, 16, 0, 0, 0, 8, -5.81544, 9.62615e-06, -12.912)
+
+[node name="path_tilesLong3" parent="Tiles" instance=ExtResource("2_p7sq7")]
+transform = Transform3D(8, 0, 0, 0, 16, 0, 0, 0, 8, -5.81572, -1.49012e-08, 3.07615)
+
+[node name="path_tilesLong4" parent="Tiles" instance=ExtResource("2_p7sq7")]
+transform = Transform3D(8, 0, 0, 0, 16, 0, 0, 0, 8, -5.81572, -1.49012e-08, 6.2581)
+
+[node name="path_tilesLong5" parent="Tiles" instance=ExtResource("2_p7sq7")]
+transform = Transform3D(8, 0, 0, 0, 16, 0, 0, 0, 8, -5.81572, -1.49012e-08, 9.44816)
+
+[node name="path_tilesLong6" parent="Tiles" instance=ExtResource("2_p7sq7")]
+transform = Transform3D(8, 0, 0, 0, 16, 0, 0, 0, 8, -5.81572, -1.49012e-08, 12.6338)
+
+[node name="Trees" type="Node3D" parent="."]
+script = ExtResource("4_264mw")
+
+[node name="tree-snow-b2" parent="Trees" instance=ExtResource("4_tlcs1")]
+transform = Transform3D(7.99513, -0.279196, 0, 0.279196, 7.99513, 0, 0, 0, 8, -27.589, -7.45058e-08, 9.818)
+
+[node name="tree2" parent="Trees" instance=ExtResource("5_uebqb")]
+transform = Transform3D(7.99513, -0.279196, 0, 0.279196, 7.99513, 0, 0, 0, 8, -21.379, -1.49012e-08, 9.92)
+
+[node name="tree-snow-b3" parent="Trees" instance=ExtResource("4_tlcs1")]
+transform = Transform3D(7.99513, -0.279196, 0, 0.279196, 7.99513, 0, 0, 0, 8, -28.513, -0.0322673, -3.06523)
+
+[node name="tree3" parent="Trees" instance=ExtResource("5_uebqb")]
+transform = Transform3D(7.99513, -0.279196, 0, 0.279196, 7.99513, 0, 0, 0, 8, -22.303, -0.0322673, -2.96323)
+
+[node name="tree-snow-b4" parent="Trees" instance=ExtResource("4_tlcs1")]
+transform = Transform3D(7.99513, -0.279196, 0, 0.279196, 7.99513, 0, 0, 0, 8, -24.8627, 0.0952056, 3.58542)
+
+[node name="tree4" parent="Trees" instance=ExtResource("5_uebqb")]
+transform = Transform3D(7.99513, -0.279196, 0, 0.279196, 7.99513, 0, 0, 0, 8, -31.683, -0.359825, 3.68742)
+
+[node name="tree6" parent="Trees" instance=ExtResource("5_uebqb")]
+transform = Transform3D(7.99513, -0.142844, 0, 0.279196, 4.09052, 0, 0, 0, 25.6904, -36.5986, -2.07404, -7.73894)
+
+[node name="tree7" parent="Trees" instance=ExtResource("5_uebqb")]
+transform = Transform3D(7.99513, -0.142844, 0, 0.279196, 4.09052, 0, 0, 0, 25.6904, -36.5986, -2.07404, 7.41798)
+
+[node name="tree-snow-b5" parent="Trees" instance=ExtResource("4_tlcs1")]
+transform = Transform3D(7.99513, -0.279196, 0, 0.279196, 7.99513, 0, 0, 0, 8, -24.8156, 0.0968468, -8.99843)
+
+[node name="tree5" parent="Trees" instance=ExtResource("5_uebqb")]
+transform = Transform3D(7.99513, -0.279196, 0, 0.279196, 7.99513, 0, 0, 0, 8, -31.636, -0.358184, -8.89643)
