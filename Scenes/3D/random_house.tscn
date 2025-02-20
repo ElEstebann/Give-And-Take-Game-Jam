@@ -1,0 +1,103 @@
+[gd_scene load_steps=25 format=3 uid="uid://c4vfgmasxvoq7"]
+
+[ext_resource type="Script" path="res://Scripts/3d/random_house.gd" id="1_2fteo"]
+[ext_resource type="PackedScene" uid="uid://dpc7j0yqchso6" path="res://Assets/3DModels/kenney_city-kit-suburban/Models/GLTF format/path_tilesLong.glb" id="2_6ty1f"]
+[ext_resource type="PackedScene" uid="uid://ca1cq013lmtwi" path="res://Assets/3DModels/kenney_city-kit-suburban/Models/GLTF format/house_type01.glb" id="2_hxpem"]
+[ext_resource type="PackedScene" uid="uid://c76a6qox0761" path="res://Assets/3DModels/kenney_city-kit-suburban/Models/GLTF format/house_type02.glb" id="3_wcrtn"]
+[ext_resource type="PackedScene" uid="uid://dy2uj7tctfadb" path="res://Assets/3DModels/kenney_city-kit-suburban/Models/GLTF format/house_type03.glb" id="4_vuhvw"]
+[ext_resource type="PackedScene" uid="uid://dwvidhl881llc" path="res://Assets/3DModels/kenney_city-kit-suburban/Models/GLTF format/house_type04.glb" id="5_yghp2"]
+[ext_resource type="PackedScene" uid="uid://caxscfduxqlgd" path="res://Assets/3DModels/kenney_city-kit-suburban/Models/GLTF format/house_type05.glb" id="6_771q0"]
+[ext_resource type="PackedScene" uid="uid://dc02pvxhedpw7" path="res://Assets/3DModels/kenney_city-kit-suburban/Models/GLTF format/house_type06.glb" id="7_jh44v"]
+[ext_resource type="PackedScene" uid="uid://rnmy78y5nivo" path="res://Assets/3DModels/kenney_city-kit-suburban/Models/GLTF format/house_type07.glb" id="8_wxoox"]
+[ext_resource type="PackedScene" uid="uid://cnb8kyk6lbtts" path="res://Assets/3DModels/kenney_city-kit-suburban/Models/GLTF format/house_type08.glb" id="9_gv3d8"]
+[ext_resource type="PackedScene" uid="uid://c1vaql3dbtw4f" path="res://Assets/3DModels/kenney_city-kit-suburban/Models/GLTF format/house_type09.glb" id="10_raasa"]
+[ext_resource type="PackedScene" uid="uid://do5ytxcphavk7" path="res://Assets/3DModels/kenney_city-kit-suburban/Models/GLTF format/house_type10.glb" id="11_ihfur"]
+[ext_resource type="PackedScene" uid="uid://c8wmp204mmxx8" path="res://Assets/3DModels/kenney_city-kit-suburban/Models/GLTF format/house_type11.glb" id="12_bm3hv"]
+[ext_resource type="PackedScene" uid="uid://b4ro4ojkcflm5" path="res://Assets/3DModels/kenney_city-kit-suburban/Models/GLTF format/house_type12.glb" id="13_xvc12"]
+[ext_resource type="PackedScene" uid="uid://cq7gd8gleclbe" path="res://Assets/3DModels/kenney_city-kit-suburban/Models/GLTF format/house_type13.glb" id="14_ulvaq"]
+[ext_resource type="PackedScene" uid="uid://dt8tcy5gah3fk" path="res://Assets/3DModels/kenney_city-kit-suburban/Models/GLTF format/house_type14.glb" id="15_gqmt3"]
+[ext_resource type="PackedScene" uid="uid://cuaalbh7vctl4" path="res://Assets/3DModels/kenney_city-kit-suburban/Models/GLTF format/house_type15.glb" id="16_th666"]
+[ext_resource type="PackedScene" uid="uid://icf10qomyy4e" path="res://Assets/3DModels/kenney_city-kit-suburban/Models/GLTF format/house_type16.glb" id="17_1citm"]
+[ext_resource type="PackedScene" uid="uid://djktk8oaud63f" path="res://Assets/3DModels/kenney_city-kit-suburban/Models/GLTF format/house_type17.glb" id="18_yglqa"]
+[ext_resource type="PackedScene" uid="uid://vbbc26y6db5a" path="res://Assets/3DModels/kenney_city-kit-suburban/Models/GLTF format/house_type18.glb" id="19_48oql"]
+[ext_resource type="PackedScene" uid="uid://bk48s8fxixd03" path="res://Assets/3DModels/kenney_city-kit-suburban/Models/GLTF format/house_type19.glb" id="20_o3wnd"]
+[ext_resource type="PackedScene" uid="uid://c11vmlrsd1ocb" path="res://Assets/3DModels/kenney_city-kit-suburban/Models/GLTF format/house_type20.glb" id="21_hp4o1"]
+[ext_resource type="PackedScene" uid="uid://bw57lq6psfbgx" path="res://Assets/3DModels/kenney_city-kit-suburban/Models/GLTF format/house_type21.glb" id="22_m7y3m"]
+[ext_resource type="PackedScene" uid="uid://l26oj5o8w6yy" path="res://Assets/3DModels/kenney_holiday-kit/Models/GLB format/snow-flat.glb" id="24_qsgij"]
+
+[node name="RandomHouse" type="Node3D"]
+script = ExtResource("1_2fteo")
+
+[node name="path_tilesLong2" parent="." instance=ExtResource("2_6ty1f")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0.759503)
+
+[node name="path_tilesLong3" parent="." instance=ExtResource("2_6ty1f")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 1.15873)
+
+[node name="Homes" type="Node3D" parent="."]
+
+[node name="house_type022" parent="Homes" instance=ExtResource("3_wcrtn")]
+
+[node name="house_type032" parent="Homes" instance=ExtResource("4_vuhvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.198121, 0, 0.162057)
+
+[node name="house_type042" parent="Homes" instance=ExtResource("5_yghp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.253819, 0, 0.616513)
+
+[node name="house_type052" parent="Homes" instance=ExtResource("6_771q0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0406467)
+
+[node name="house_type062" parent="Homes" instance=ExtResource("7_jh44v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0353721)
+
+[node name="house_type072" parent="Homes" instance=ExtResource("8_wxoox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.154956)
+
+[node name="house_type082" parent="Homes" instance=ExtResource("9_gv3d8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.166048, 0, 0.197761)
+
+[node name="house_type092" parent="Homes" instance=ExtResource("10_raasa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.153389)
+
+[node name="house_type102" parent="Homes" instance=ExtResource("11_ihfur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.152244, 0, 0.302258)
+
+[node name="house_type112" parent="Homes" instance=ExtResource("12_bm3hv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027126, 0, 0.240572)
+
+[node name="house_type122" parent="Homes" instance=ExtResource("13_xvc12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.204498)
+
+[node name="house_type132" parent="Homes" instance=ExtResource("14_ulvaq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0292204, 0, 0.156758)
+
+[node name="house_type142" parent="Homes" instance=ExtResource("15_gqmt3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.160542)
+
+[node name="house_type152" parent="Homes" instance=ExtResource("16_th666")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20804, 0, 0.160914)
+
+[node name="house_type162" parent="Homes" instance=ExtResource("17_1citm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.200642, 0, 0.167794)
+
+[node name="house_type172" parent="Homes" instance=ExtResource("18_yglqa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0429039, 0, 0.0593503)
+
+[node name="house_type182" parent="Homes" instance=ExtResource("19_48oql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.375096, 0, 0.156303)
+
+[node name="house_type192" parent="Homes" instance=ExtResource("20_o3wnd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.159179)
+
+[node name="house_type202" parent="Homes" instance=ExtResource("21_hp4o1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.398169, 0, 0.163886)
+
+[node name="house_type212" parent="Homes" instance=ExtResource("22_m7y3m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.228235, 0, 0.164198)
+
+[node name="house_type012" parent="Homes" instance=ExtResource("2_hxpem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.641877, 0, 0.615249)
+visible = false
+
+[node name="snow-flat2" parent="Homes" instance=ExtResource("24_qsgij")]
+transform = Transform3D(3.39, 0, 0, 0, 1, 0, 0, 0, 3.39, 0, -0.104147, 0)
