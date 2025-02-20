@@ -1,0 +1,27 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://bccciiigulgpa"]
+
+[ext_resource type="Texture2D" uid="uid://yvlxx28jg3xd" path="res://Sprites/christmas-village-asset-pack/small-tree.png" id="1_srowh"]
+[ext_resource type="Texture2D" uid="uid://b1pfyrwoxp1dw" path="res://Sprites/ChristmasIconsFree/ChristmasIconsFree/xmasicons.png" id="2_cm58g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28wvb"]
+atlas = ExtResource("2_cm58g")
+region = Rect2(64, 64, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_srowh")
+}],
+"loop": true,
+"name": &"give",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28wvb")
+}],
+"loop": true,
+"name": &"take",
+"speed": 5.0
+}]
