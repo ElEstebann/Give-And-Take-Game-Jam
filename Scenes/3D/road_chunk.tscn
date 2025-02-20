@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=3 uid="uid://myiawf4kjn3t"]
+
+[ext_resource type="PackedScene" uid="uid://dw0h4wcaue5c2" path="res://Assets/3DModels/kenney_city-kit-suburban/Models/GLTF format/driveway_long.glb" id="1_3p6fu"]
+[ext_resource type="PackedScene" uid="uid://c4vfgmasxvoq7" path="res://Scenes/3D/random_house.tscn" id="2_n1de5"]
+[ext_resource type="PackedScene" uid="uid://dpc7j0yqchso6" path="res://Assets/3DModels/kenney_city-kit-suburban/Models/GLTF format/path_tilesLong.glb" id="4_ep84w"]
+[ext_resource type="PackedScene" uid="uid://cxbgdgsl01wn4" path="res://Assets/3DModels/kenney_city-kit-suburban/Models/GLTF format/fence_wide.glb" id="5_1tfq0"]
+
+[node name="RoadChunk" type="Node3D"]
+
+[node name="driveway_long2f" parent="." instance=ExtResource("1_3p6fu")]
+transform = Transform3D(35, 0, 0, 0, 35, 0, 0, 0, 71.5506, 0, 0, 0)
+
+[node name="LeftSide" type="Node3D" parent="."]
+transform = Transform3D(0.999391, 0.0348995, 0, -0.0348995, 0.999391, 0, 0, 0, 1, 0.675, 0.17, 0)
+
+[node name="RandomHouse" parent="LeftSide" instance=ExtResource("2_n1de5")]
+transform = Transform3D(-3.49691e-07, 0, 8, 0, 8, 0, -8, 0, -3.49691e-07, -17.1999, 0, -0.262032)
+
+[node name="path_tilesLong2" parent="LeftSide" instance=ExtResource("4_ep84w")]
+transform = Transform3D(8, 0, 0, 0, 16, 0, 0, 0, 8, -5.81572, 0, -0.117904)
+
+[node name="path_tilesLong7" parent="LeftSide" instance=ExtResource("4_ep84w")]
+transform = Transform3D(8, 0, 0, 0, 16, 0, 0, 0, 8, -5.81572, 0, -3.31618)
+
+[node name="path_tilesLong8" parent="LeftSide" instance=ExtResource("4_ep84w")]
+transform = Transform3D(8, 0, 0, 0, 16, 0, 0, 0, 8, -5.81572, 0, -6.51271)
+
+[node name="path_tilesLong9" parent="LeftSide" instance=ExtResource("4_ep84w")]
+transform = Transform3D(8, 0, 0, 0, 16, 0, 0, 0, 8, -5.81572, 0, -9.71084)
+
+[node name="path_tilesLong10" parent="LeftSide" instance=ExtResource("4_ep84w")]
+transform = Transform3D(8, 0, 0, 0, 16, 0, 0, 0, 8, -5.81544, 9.62615e-06, -12.912)
+
+[node name="path_tilesLong3" parent="LeftSide" instance=ExtResource("4_ep84w")]
+transform = Transform3D(8, 0, 0, 0, 16, 0, 0, 0, 8, -5.81572, 0, 3.07615)
+
+[node name="path_tilesLong4" parent="LeftSide" instance=ExtResource("4_ep84w")]
+transform = Transform3D(8, 0, 0, 0, 16, 0, 0, 0, 8, -5.81572, 0, 6.2581)
+
+[node name="path_tilesLong5" parent="LeftSide" instance=ExtResource("4_ep84w")]
+transform = Transform3D(8, 0, 0, 0, 16, 0, 0, 0, 8, -5.81572, 0, 9.44816)
+
+[node name="path_tilesLong6" parent="LeftSide" instance=ExtResource("4_ep84w")]
+transform = Transform3D(8, 0, 0, 0, 16, 0, 0, 0, 8, -5.81572, 0, 12.6338)
+
+[node name="fence_wide2" parent="LeftSide" instance=ExtResource("5_1tfq0")]
+transform = Transform3D(-8.00305e-07, -0.279196, 44.7377, -2.79473e-08, 7.99513, 1.56228, -18.32, 0, -1.95674e-06, -17.0117, -0.764165, 0.005)
+
+[node name="RightSide" type="Node3D" parent="."]
+transform = Transform3D(-0.999391, -0.0348995, -8.74228e-08, -0.0348995, 0.999391, 0, 8.73695e-08, 3.05101e-09, -1, -0.675, 0.17, 0)
+
+[node name="RandomHouse" parent="RightSide" instance=ExtResource("2_n1de5")]
+transform = Transform3D(-3.49691e-07, 0, 8, 0, 8, 0, -8, 0, -3.49691e-07, -17.1999, 0, -0.262032)
+
+[node name="path_tilesLong2" parent="RightSide" instance=ExtResource("4_ep84w")]
+transform = Transform3D(8, 0, 0, 0, 16, 0, 0, 0, 8, -5.81572, 0, -0.117904)
+
+[node name="path_tilesLong7" parent="RightSide" instance=ExtResource("4_ep84w")]
+transform = Transform3D(8, 0, 0, 0, 16, 0, 0, 0, 8, -5.81572, 0, -3.31618)
+
+[node name="path_tilesLong8" parent="RightSide" instance=ExtResource("4_ep84w")]
+transform = Transform3D(8, 0, 0, 0, 16, 0, 0, 0, 8, -5.81572, 0, -6.51271)
+
+[node name="path_tilesLong9" parent="RightSide" instance=ExtResource("4_ep84w")]
+transform = Transform3D(8, 0, 0, 0, 16, 0, 0, 0, 8, -5.81572, 0, -9.71084)
+
+[node name="path_tilesLong10" parent="RightSide" instance=ExtResource("4_ep84w")]
+transform = Transform3D(8, 0, 0, 0, 16, 0, 0, 0, 8, -5.81544, 9.62615e-06, -12.912)
+
+[node name="path_tilesLong3" parent="RightSide" instance=ExtResource("4_ep84w")]
+transform = Transform3D(8, 0, 0, 0, 16, 0, 0, 0, 8, -5.81572, 0, 3.07615)
+
+[node name="path_tilesLong4" parent="RightSide" instance=ExtResource("4_ep84w")]
+transform = Transform3D(8, 0, 0, 0, 16, 0, 0, 0, 8, -5.81572, 0, 6.2581)
+
+[node name="path_tilesLong5" parent="RightSide" instance=ExtResource("4_ep84w")]
+transform = Transform3D(8, 0, 0, 0, 16, 0, 0, 0, 8, -5.81572, 0, 9.44816)
+
+[node name="path_tilesLong6" parent="RightSide" instance=ExtResource("4_ep84w")]
+transform = Transform3D(8, 0, 0, 0, 16, 0, 0, 0, 8, -5.81572, 0, 12.6338)
+
+[node name="fence_wide2" parent="RightSide" instance=ExtResource("5_1tfq0")]
+transform = Transform3D(-8.00305e-07, -0.279196, 44.7377, -2.79473e-08, 7.99513, 1.56228, -18.32, 0, -1.95674e-06, -17.0117, -0.764165, 0.005)

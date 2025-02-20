@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://1tuichvfarrm"]
+
+[ext_resource type="PackedScene" uid="uid://myiawf4kjn3t" path="res://Scenes/3D/road_chunk.tscn" id="1_l4vvh"]
+
+[node name="InfiniteRoads" type="Node3D"]
+
+[node name="Chuncks" type="Node3D" parent="."]
+
+[node name="RoadChunk" parent="Chuncks" instance=ExtResource("1_l4vvh")]
+
+[node name="RoadChunk2" parent="Chuncks" instance=ExtResource("1_l4vvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -28.481)
+
+[node name="RoadChunk3" parent="Chuncks" instance=ExtResource("1_l4vvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -56.962)
