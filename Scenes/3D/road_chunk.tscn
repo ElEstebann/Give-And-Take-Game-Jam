@@ -13,4 +13,5 @@ transform = Transform3D(35, 0, 0, 0, 35, 0, 0, 0, 71.5506, 0, 0, 0)
 [node name="LeftSide" parent="." instance=ExtResource("2_r7kld")]
 
 [node name="RightSide" parent="." instance=ExtResource("2_r7kld")]
-transform = Transform3D(-0.999391, -0.0348995, -8.74228e-08, -0.0348995, 0.999391, 0, 8.73695e-08, 3.05101e-09, -1, -0.675, 0.17, 0)
+transform = Transform3D(-0.999391, -0.0348995, -1.50996e-07, -0.0348995, 0.999391, -1.33776e-17, 1.50904e-07, 5.26968e-09, -1, -0.675, 0.17, 0)
+is_flipped = true
