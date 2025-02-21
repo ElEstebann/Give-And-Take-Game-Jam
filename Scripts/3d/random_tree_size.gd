@@ -26,6 +26,6 @@ func randomize_trees() ->void:
 		item.scale.y = max_size - rand_mod
 		item.scale.z = max_size - rand_mod
 	
-	print_debug("trees randomized")
+	#print_debug("trees randomized")
 		
 	
