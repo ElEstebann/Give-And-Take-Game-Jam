@@ -99,5 +99,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.228235, 0, 0.164198)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.641877, 0, 0.615249)
 visible = false
 
-[node name="snow-flat2" parent="Homes" instance=ExtResource("24_qsgij")]
+[node name="snow-flat2" parent="." instance=ExtResource("24_qsgij")]
 transform = Transform3D(3.39, 0, 0, 0, 1, 0, 0, 0, 3.39, 0, -0.104147, 0)
