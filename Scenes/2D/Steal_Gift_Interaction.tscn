@@ -7,6 +7,7 @@
 
 [node name="Steal_Gift_Interaction" type="Node2D"]
 script = ExtResource("1_y3lpo")
+give = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_mwkt8")
