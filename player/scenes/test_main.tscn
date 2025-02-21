@@ -7,36 +7,129 @@
 [ext_resource type="Texture2D" uid="uid://dmtihhejh0upl" path="res://Sprites/christmas-village-asset-pack/present1.png" id="5_57i5h"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_smpnf"]
-vertices = PackedVector2Array(0.03125, 654.211, 4.92969, 3, 788.789, 3, 1161.91, 10.7891, 1156.08, 659.969, 624.359, 658.609, 586.188, 658.508, 3.52344, 657)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6), PackedInt32Array(0, 6, 7)])
+vertices = PackedVector2Array(1136.68, 35.2578, 1131.31, 634.906, 1063, 454, 1063, 333, 788.75, 28, 947, 333, 890, 326, 586.25, 633.508, 25.2031, 632.063, 29.7422, 28, 624.422, 633.609, 774, 326, 947, 335, 890, 335, 774, 445, 771, 445, 771, 566, 887, 566, 890, 505, 942, 459, 1002, 456, 887, 505, 890, 459, 942, 456, 1002, 454)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5, 6), PackedInt32Array(7, 8, 9, 4), PackedInt32Array(10, 7, 4, 11), PackedInt32Array(5, 12, 13, 6), PackedInt32Array(4, 6, 11), PackedInt32Array(11, 14, 15), PackedInt32Array(10, 11, 15), PackedInt32Array(10, 15, 16), PackedInt32Array(1, 10, 16, 17), PackedInt32Array(2, 1, 17, 18, 19, 20), PackedInt32Array(17, 21, 18), PackedInt32Array(18, 22, 19), PackedInt32Array(19, 23, 20), PackedInt32Array(2, 20, 24)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-10, 659, -5, -7, 789, -7, 1172, 1, 1166, 670, 624.327, 668.606, 586.155, 668.508, 0, 667)])
+agent_radius = 35.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ip61"]
-size = Vector2(8.14286, 7.85714)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvk8i"]
+size = Vector2(7.66667, 7.66667)
 
 [node name="TestMain" type="Node2D"]
 script = ExtResource("1_an570")
 
 [node name="Player" parent="." instance=ExtResource("1_8p2sr")]
-position = Vector2(199, 265)
+position = Vector2(613, 157)
 
 [node name="World" parent="." instance=ExtResource("2_wls1j")]
-position = Vector2(-17, -12)
-scale = Vector2(2.4, 2.359)
+position = Vector2(-37, -43)
+scale = Vector2(1.84, 2.16)
 
 [node name="BasicEnemy" parent="." instance=ExtResource("3_r0cf1")]
 position = Vector2(934, 479)
+movement_speed = 65.0
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_smpnf")
 
-[node name="Present" type="Sprite2D" parent="."]
-position = Vector2(299, 408)
-scale = Vector2(7, 7)
+[node name="Present" type="Node2D" parent="NavigationRegion2D"]
+position = Vector2(829, 508)
+scale = Vector2(6, 6)
+
+[node name="Present1" type="Sprite2D" parent="NavigationRegion2D/Present"]
 texture = ExtResource("5_57i5h")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Present"]
+[node name="StaticBody2D" type="StaticBody2D" parent="NavigationRegion2D/Present"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Present/StaticBody2D"]
-position = Vector2(-0.357143, -0.642857)
-shape = SubResource("RectangleShape2D_1ip61")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Present/StaticBody2D"]
+position = Vector2(-1.52588e-05, -0.5)
+shape = SubResource("RectangleShape2D_uvk8i")
+
+[node name="Polygon2D" type="Polygon2D" parent="NavigationRegion2D/Present"]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-3.83334, -4.66667, 3.83333, -4.66667, 3.83333, 3.83333, -3.83334, 3.83333)
+
+[node name="Present2" type="Node2D" parent="NavigationRegion2D"]
+position = Vector2(832, 447)
+scale = Vector2(6, 6)
+
+[node name="Present1" type="Sprite2D" parent="NavigationRegion2D/Present2"]
+texture = ExtResource("5_57i5h")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NavigationRegion2D/Present2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Present2/StaticBody2D"]
+position = Vector2(-1.52588e-05, -0.5)
+shape = SubResource("RectangleShape2D_uvk8i")
+
+[node name="Polygon2D" type="Polygon2D" parent="NavigationRegion2D/Present2"]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-3.83334, -4.66667, 3.83333, -4.66667, 3.83333, 3.83333, -3.83334, 3.83333)
+
+[node name="Present3" type="Node2D" parent="NavigationRegion2D"]
+position = Vector2(884, 401)
+scale = Vector2(6, 6)
+
+[node name="Present1" type="Sprite2D" parent="NavigationRegion2D/Present3"]
+texture = ExtResource("5_57i5h")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NavigationRegion2D/Present3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Present3/StaticBody2D"]
+position = Vector2(-1.52588e-05, -0.5)
+shape = SubResource("RectangleShape2D_uvk8i")
+
+[node name="Polygon2D" type="Polygon2D" parent="NavigationRegion2D/Present3"]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-3.83334, -4.66667, 3.83333, -4.66667, 3.83333, 3.83333, -3.83334, 3.83333)
+
+[node name="Present4" type="Node2D" parent="NavigationRegion2D"]
+position = Vector2(944, 398)
+scale = Vector2(6, 6)
+
+[node name="Present1" type="Sprite2D" parent="NavigationRegion2D/Present4"]
+texture = ExtResource("5_57i5h")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NavigationRegion2D/Present4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Present4/StaticBody2D"]
+position = Vector2(-1.52588e-05, -0.5)
+shape = SubResource("RectangleShape2D_uvk8i")
+
+[node name="Polygon2D" type="Polygon2D" parent="NavigationRegion2D/Present4"]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-3.83334, -4.66667, 3.83333, -4.66667, 3.83333, 3.83333, -3.83334, 3.83333)
+
+[node name="Present5" type="Node2D" parent="NavigationRegion2D"]
+position = Vector2(1005, 396)
+scale = Vector2(6, 6)
+
+[node name="Present1" type="Sprite2D" parent="NavigationRegion2D/Present5"]
+texture = ExtResource("5_57i5h")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NavigationRegion2D/Present5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Present5/StaticBody2D"]
+position = Vector2(-1.52588e-05, -0.5)
+shape = SubResource("RectangleShape2D_uvk8i")
+
+[node name="Polygon2D" type="Polygon2D" parent="NavigationRegion2D/Present5"]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-3.83334, -4.66667, 3.83333, -4.66667, 3.83333, 3.83333, -3.83334, 3.83333)
+
+[node name="Present6" type="Node2D" parent="NavigationRegion2D"]
+position = Vector2(832, 389)
+scale = Vector2(6, 6)
+
+[node name="Present1" type="Sprite2D" parent="NavigationRegion2D/Present6"]
+texture = ExtResource("5_57i5h")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NavigationRegion2D/Present6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Present6/StaticBody2D"]
+position = Vector2(-1.52588e-05, -0.5)
+shape = SubResource("RectangleShape2D_uvk8i")
+
+[node name="Polygon2D" type="Polygon2D" parent="NavigationRegion2D/Present6"]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-3.83334, -4.66667, 3.83333, -4.66667, 3.83333, 3.83333, -3.83334, 3.83333)
