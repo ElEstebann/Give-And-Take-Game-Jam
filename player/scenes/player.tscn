@@ -1,7 +1,8 @@
-[gd_scene load_steps=31 format=3 uid="uid://itog5fxeishp"]
+[gd_scene load_steps=32 format=3 uid="uid://itog5fxeishp"]
 
 [ext_resource type="Script" path="res://player/scripts/player.gd" id="1_1exta"]
 [ext_resource type="Texture2D" uid="uid://clbkp5c573pan" path="res://player/sprites/walk06.png" id="2_8a6wc"]
+[ext_resource type="Texture2D" uid="uid://dmtihhejh0upl" path="res://Sprites/christmas-village-asset-pack/present1.png" id="2_q5bqh"]
 [ext_resource type="Texture2D" uid="uid://dnqu56mwan3gc" path="res://player/sprites/sneak01.png" id="3_0067l"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ulrea"]
@@ -212,6 +213,7 @@ script = ExtResource("1_1exta")
 SPEED = 200.0
 sneak_speed = 120.0
 slow_time = 12.0
+presents = [ExtResource("2_q5bqh")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
