@@ -1,8 +1,43 @@
-[gd_scene load_steps=2 format=3 uid="uid://bffpg4xi7eyrp"]
+[gd_scene load_steps=8 format=3 uid="uid://bffpg4xi7eyrp"]
 
 [ext_resource type="PackedScene" uid="uid://itog5fxeishp" path="res://player/scenes/player.tscn" id="1_8p2sr"]
+[ext_resource type="Script" path="res://player/scenes/level_script.gd" id="1_an570"]
+[ext_resource type="PackedScene" uid="uid://bk37v10udd8p4" path="res://Scenes/2D/basichouse.tscn" id="2_wls1j"]
+[ext_resource type="PackedScene" uid="uid://hymyhg5qlkwg" path="res://enemies/basic_enemy.tscn" id="3_r0cf1"]
+[ext_resource type="Texture2D" uid="uid://dmtihhejh0upl" path="res://Sprites/christmas-village-asset-pack/present1.png" id="5_57i5h"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_smpnf"]
+vertices = PackedVector2Array(0.03125, 654.211, 4.92969, 3, 788.789, 3, 1161.91, 10.7891, 1156.08, 659.969, 624.359, 658.609, 586.188, 658.508, 3.52344, 657)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6), PackedInt32Array(0, 6, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-10, 659, -5, -7, 789, -7, 1172, 1, 1166, 670, 624.327, 668.606, 586.155, 668.508, 0, 667)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ip61"]
+size = Vector2(8.14286, 7.85714)
 
 [node name="TestMain" type="Node2D"]
+script = ExtResource("1_an570")
 
 [node name="Player" parent="." instance=ExtResource("1_8p2sr")]
 position = Vector2(199, 265)
+
+[node name="World" parent="." instance=ExtResource("2_wls1j")]
+position = Vector2(-17, -12)
+scale = Vector2(2.4, 2.359)
+
+[node name="BasicEnemy" parent="." instance=ExtResource("3_r0cf1")]
+position = Vector2(934, 479)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_smpnf")
+
+[node name="Present" type="Sprite2D" parent="."]
+position = Vector2(299, 408)
+scale = Vector2(7, 7)
+texture = ExtResource("5_57i5h")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Present"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Present/StaticBody2D"]
+position = Vector2(-0.357143, -0.642857)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1ip61")
