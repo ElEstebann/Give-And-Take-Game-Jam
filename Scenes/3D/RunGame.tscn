@@ -1,0 +1,102 @@
+[gd_scene load_steps=11 format=3 uid="uid://b116w88ukxx5a"]
+
+[ext_resource type="PackedScene" uid="uid://b36qhmnygyvj5" path="res://Scenes/3D/3d_run_player.tscn" id="1_0s5xi"]
+[ext_resource type="PackedScene" uid="uid://1tuichvfarrm" path="res://Scenes/3D/infinite_roads.tscn" id="2_v0wfc"]
+[ext_resource type="Texture2D" uid="uid://j5f0gm2fcpwq" path="res://Assets/Textures/skybox.png" id="3_ic7m3"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7t78y"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qbpv0"]
+panorama = ExtResource("3_ic7m3")
+
+[sub_resource type="Sky" id="Sky_xp6ls"]
+sky_material = SubResource("PanoramaSkyMaterial_qbpv0")
+
+[sub_resource type="Environment" id="Environment_iss0r"]
+background_mode = 2
+sky = SubResource("Sky_xp6ls")
+sky_rotation = Vector3(0, 3.14159, 0)
+
+[sub_resource type="Animation" id="Animation_gqsyf"]
+resource_name = "SpinSky"
+length = 360.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:environment:sky_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 360),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.28319, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_de87n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:environment:sky_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_83n7w"]
+_data = {
+"RESET": SubResource("Animation_de87n"),
+"SpinSky": SubResource("Animation_gqsyf")
+}
+
+[node name="RunGame" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 2.577, 1.729)
+far = 100.0
+
+[node name="3DRunPlayer" parent="." instance=ExtResource("1_0s5xi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.101, -0.958)
+
+[node name="World Collision" type="Node3D" parent="."]
+
+[node name="Floor" type="StaticBody3D" parent="World Collision"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World Collision/Floor"]
+shape = SubResource("WorldBoundaryShape3D_7t78y")
+
+[node name="Right" type="StaticBody3D" parent="World Collision"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World Collision/Right"]
+shape = SubResource("WorldBoundaryShape3D_7t78y")
+
+[node name="Left" type="StaticBody3D" parent="World Collision"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World Collision/Left"]
+shape = SubResource("WorldBoundaryShape3D_7t78y")
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 0.810706, 0.585453, 0, -0.585453, 0.810706, 0, 5.651, 0)
+
+[node name="InfiniteRoads" parent="." instance=ExtResource("2_v0wfc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.205, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_iss0r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WorldEnvironment"]
+libraries = {
+"": SubResource("AnimationLibrary_83n7w")
+}
+autoplay = "SpinSky"
