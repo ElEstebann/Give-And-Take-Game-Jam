@@ -213,7 +213,7 @@ script = ExtResource("1_1exta")
 SPEED = 200.0
 sneak_speed = 120.0
 slow_time = 12.0
-presents = [ExtResource("2_q5bqh")]
+presents = Array[Texture2D]([ExtResource("2_q5bqh")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
