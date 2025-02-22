@@ -37,7 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://s4xy0wjbcweq" path="res://Sprites/christmas-village-asset-pack/stocking.png" id="36_62b6g"]
 [ext_resource type="Texture2D" uid="uid://d4nagsg1ylpui" path="res://Sprites/sierrassets furniture pack/sierrassets furniture pack/furniture/individual sprites/part-Slice 148.png" id="36_s7ayi"]
 [ext_resource type="Texture2D" uid="uid://c33di2a8m0c05" path="res://Sprites/christmas-village-asset-pack/wreath.png" id="37_77c2e"]
-[ext_resource type="PackedScene" uid="uid://sdlq0fypxyk6" path="res://Scenes/2D/Steal_Gift_Interaction.tscn" id="39_so8qo"]
+[ext_resource type="PackedScene" uid="uid://b8qr2max1j0jf" path="res://Scenes/2D/Steal_Gift_Interaction.tscn" id="39_so8qo"]
 [ext_resource type="SpriteFrames" uid="uid://bnjadv53dpwv1" path="res://Sprites/SpriteFrames/ToyChest.tres" id="40_4i0eg"]
 [ext_resource type="Texture2D" uid="uid://bl23rogrwo736" path="res://Sprites/sierrassets furniture pack/sierrassets furniture pack/furniture/individual sprites/part-Slice 115.png" id="42_8lpl2"]
 

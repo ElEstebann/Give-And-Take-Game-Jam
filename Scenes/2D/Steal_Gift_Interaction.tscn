@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://sdlq0fypxyk6"]
+[gd_scene load_steps=4 format=3 uid="uid://b8qr2max1j0jf"]
 
 [ext_resource type="Script" path="res://Scripts/2D/Interaction.gd" id="1_1ffgn"]
 [ext_resource type="SpriteFrames" uid="uid://bccciiigulgpa" path="res://Sprites/SpriteFrames/Tree.tres" id="2_mwkt8"]
