@@ -53,6 +53,8 @@ func movement(delta : float) -> void:
 	velocity = vel
 
 func spawn_present() -> void:
+	level_manager.SpawnPresentAt(position)
+	return
 	var root : Node = get_tree().root
 	var sprite : Sprite2D = Sprite2D.new()
 	sprite.texture = presents[0]

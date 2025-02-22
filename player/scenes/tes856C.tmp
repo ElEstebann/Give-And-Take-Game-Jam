@@ -50,6 +50,6 @@ theme_override_font_sizes/font_size = 39
 text = "Place a present"
 
 [node name="Crosshair" parent="GUI" instance=ExtResource("6_rxhqi")]
-rotate_speed = 20.0
-size_amplitude = 0.1
+rotate_speed = 4.0
+size_amplitude = 0.3
 size_frequency = 0.003
