@@ -15,6 +15,10 @@ run/main_scene="res://player/scenes/test_main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+UiManager="*res://Scenes/UI_Manager.tscn"
+
 [display]
 
 window/size/mode=2
