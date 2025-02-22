@@ -21,7 +21,6 @@ UiManager="*res://Scenes/UI_Manager.tscn"
 
 [display]
 
-window/size/mode=2
 window/stretch/mode="viewport"
 
 [input]
