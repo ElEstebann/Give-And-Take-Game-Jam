@@ -36,7 +36,7 @@ modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 offset_left = 80.0
 offset_top = 48.0
-offset_right = 136.0
+offset_right = 160.0
 offset_bottom = 140.0
 text = "Taken
   0/5
@@ -44,3 +44,9 @@ Given
   0/5"
 fit_content = true
 scroll_active = false
+
+[node name="Progression" type="RichTextLabel" parent="TaskLog"]
+offset_left = 104.0
+offset_top = 76.5
+offset_right = 144.0
+offset_bottom = 116.5
