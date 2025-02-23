@@ -2,7 +2,7 @@ class_name gaymanager extends Node
 
 
 const MAX_HEALTH = 4
-var difficulty = 1
+var difficulty = 20
 var score = 0
 var health = MAX_HEALTH
 

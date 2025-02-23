@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5huc31j5o27r"
 path.s3tc="res://.godot/imported/Boot-Rght_baseColor.png-9a292bbd81be715e130dd9eb69632e38.s3tc.ctex"
+path.etc2="res://.godot/imported/Boot-Rght_baseColor.png-9a292bbd81be715e130dd9eb69632e38.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/3DModels/santa/textures/Boot-Rght_baseColor.png"
-dest_files=["res://.godot/imported/Boot-Rght_baseColor.png-9a292bbd81be715e130dd9eb69632e38.s3tc.ctex"]
+dest_files=["res://.godot/imported/Boot-Rght_baseColor.png-9a292bbd81be715e130dd9eb69632e38.s3tc.ctex", "res://.godot/imported/Boot-Rght_baseColor.png-9a292bbd81be715e130dd9eb69632e38.etc2.ctex"]
 
 [params]
 

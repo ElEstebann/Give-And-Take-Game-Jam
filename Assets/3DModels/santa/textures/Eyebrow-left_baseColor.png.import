@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dksum1ey17lgk"
 path.s3tc="res://.godot/imported/Eyebrow-left_baseColor.png-0e0865f19d5fc507f156bdd0ef6842af.s3tc.ctex"
+path.etc2="res://.godot/imported/Eyebrow-left_baseColor.png-0e0865f19d5fc507f156bdd0ef6842af.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/3DModels/santa/textures/Eyebrow-left_baseColor.png"
-dest_files=["res://.godot/imported/Eyebrow-left_baseColor.png-0e0865f19d5fc507f156bdd0ef6842af.s3tc.ctex"]
+dest_files=["res://.godot/imported/Eyebrow-left_baseColor.png-0e0865f19d5fc507f156bdd0ef6842af.s3tc.ctex", "res://.godot/imported/Eyebrow-left_baseColor.png-0e0865f19d5fc507f156bdd0ef6842af.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://1rmk4lrqy8h4"
 path.s3tc="res://.godot/imported/Image_0.jpg-3c43a4783647c03684e7b3bd5de2dcb0.s3tc.ctex"
+path.etc2="res://.godot/imported/Image_0.jpg-3c43a4783647c03684e7b3bd5de2dcb0.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/3DModels/smolGrinch/fbx/the-cute-toon-grinch-walking-animated/source/Walking/Image_0.jpg"
-dest_files=["res://.godot/imported/Image_0.jpg-3c43a4783647c03684e7b3bd5de2dcb0.s3tc.ctex"]
+dest_files=["res://.godot/imported/Image_0.jpg-3c43a4783647c03684e7b3bd5de2dcb0.s3tc.ctex", "res://.godot/imported/Image_0.jpg-3c43a4783647c03684e7b3bd5de2dcb0.etc2.ctex"]
 
 [params]
 

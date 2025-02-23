@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3jbj3sw28uli"
 path.s3tc="res://.godot/imported/material_baseColor.png-51caf3899e02f8be0b3c75178fb02ffa.s3tc.ctex"
+path.etc2="res://.godot/imported/material_baseColor.png-51caf3899e02f8be0b3c75178fb02ffa.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/3DModels/santa/textures/material_baseColor.png"
-dest_files=["res://.godot/imported/material_baseColor.png-51caf3899e02f8be0b3c75178fb02ffa.s3tc.ctex"]
+dest_files=["res://.godot/imported/material_baseColor.png-51caf3899e02f8be0b3c75178fb02ffa.s3tc.ctex", "res://.godot/imported/material_baseColor.png-51caf3899e02f8be0b3c75178fb02ffa.etc2.ctex"]
 
 [params]
 
