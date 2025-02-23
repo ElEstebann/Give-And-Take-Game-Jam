@@ -28,6 +28,7 @@ func _ready() -> void:
 	instance = self
 	OnPresentPlaced.connect(_on_present_spawn)
 	_init_level()	
+	GameManager.play_song(GameManager.Music.CHIPTUNE)
 
 #difficulty scale for the level, 0 to 100
 

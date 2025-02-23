@@ -23,8 +23,8 @@ var time_left = 30
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	$"CameraHandle/Street Name".text = "GO TO\n" + get_street_name().to_upper()
+	GameManager.play_song(GameManager.Music.NORMAL)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -52,7 +52,7 @@ func end_game():
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	GameManager.swap_music()
+	#GameManager.swap_music()
 	GameManager.score_up()
 	get_tree().change_scene_to_file("res://player/scenes/test_main.tscn")
 	
