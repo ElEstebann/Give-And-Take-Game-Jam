@@ -17,12 +17,14 @@ func _ready() -> void:
 				
 		if chunk.position.z > highest_z:
 			highest_z = chunk.position.z
+	chunks.get_children()[0].queue_free()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	for chunk in chunks.get_children():
 		chunk.position.z += SPEED*delta
-		if chunk.position.z > highest_z:
+		if chunk.position.z >= highest_z:
 			chunk.position.z = reset_z + (chunk.position.z - highest_z)
 			chunk.randomize_chunk()
+			#print("TELEPORTED")

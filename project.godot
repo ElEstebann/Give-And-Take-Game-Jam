@@ -14,3 +14,7 @@ config/name="GiveAndTake"
 run/main_scene="res://Scenes/3D/RunGame.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[global_group]
+
+3Dplayer=""

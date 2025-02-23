@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpb585qlf42ia"]
+
+[ext_resource type="PackedScene" uid="uid://d0mshep568wis" path="res://Assets/3DModels/kenney_car-kit/Models/GLB format/suv-luxury.glb" id="1_bspbp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2trgi"]
+size = Vector3(1.29099, 1.24341, 2.22447)
+
+[node name="RandomCar" type="Node3D"]
+
+[node name="suv-luxury" parent="." instance=ExtResource("1_bspbp")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 1.8, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00105286, 0.628784, 0.0610427)
+shape = SubResource("BoxShape3D_2trgi")

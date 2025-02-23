@@ -1,13 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://b116w88ukxx5a"]
+[gd_scene load_steps=22 format=3 uid="uid://b116w88ukxx5a"]
 
 [ext_resource type="PackedScene" uid="uid://b36qhmnygyvj5" path="res://Scenes/3D/3d_run_player.tscn" id="1_0s5xi"]
+[ext_resource type="Script" path="res://Scripts/3d/3d_run_game.gd" id="1_47egi"]
 [ext_resource type="PackedScene" uid="uid://1tuichvfarrm" path="res://Scenes/3D/infinite_roads.tscn" id="2_v0wfc"]
-[ext_resource type="Texture2D" uid="uid://j5f0gm2fcpwq" path="res://Assets/Textures/skybox.png" id="3_ic7m3"]
+[ext_resource type="Texture2D" uid="uid://dneio4lrgc0c4" path="res://Assets/Textures/sky_panorama.jpg" id="3_ynpeg"]
+[ext_resource type="LabelSettings" uid="uid://but178veoep22" path="res://Assets/Settings/run_game_labels.tres" id="5_n70y5"]
+[ext_resource type="PackedScene" uid="uid://bqbo5bjedt1t" path="res://Scenes/3D/estate.tscn" id="6_ssq3n"]
+[ext_resource type="PackedScene" uid="uid://c72kqwh8t2m86" path="res://Assets/3DModels/smolGrinch/grinch/scene.gltf" id="7_xjv7p"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7t78y"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qbpv0"]
-panorama = ExtResource("3_ic7m3")
+panorama = ExtResource("3_ynpeg")
 
 [sub_resource type="Sky" id="Sky_xp6ls"]
 sky_material = SubResource("PanoramaSkyMaterial_qbpv0")
@@ -56,13 +60,306 @@ _data = {
 "SpinSky": SubResource("Animation_gqsyf")
 }
 
+[sub_resource type="Animation" id="Animation_i0130"]
+resource_name = "game_start"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.526, 0), Vector3(0, 1.526, 0), Vector3(0, 1.101, -0.958)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.253073, 3.14159, 0), Vector3(0.253073, 3.14159, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 0.36, 1), Vector3(1, 0.36, 1), Vector3(1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Street Name:label_settings:font_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Street Name:label_settings:outline_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Camera3D:current")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_5h8ke"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.101, -0.958)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 0.36, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Street Name:label_settings:font_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Street Name:label_settings:outline_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Camera3D:current")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3cm36"]
+_data = {
+"RESET": SubResource("Animation_5h8ke"),
+"game_start": SubResource("Animation_i0130")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_5xce6"]
+font_size = 71
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_5vqn6"]
+resource_name = "win"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sketchfab_Scene:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-7.05291, -67.6821, -0.242809), Vector3(-14.368, -67.682, -0.243)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sketchfab_Scene/Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.03333, 3),
+"transitions": PackedFloat32Array(1, 1.97461, 1),
+"update": 0,
+"values": [Vector3(0, 1.442, -1.382), Vector3(0, 1.442, -4.426), Vector3(0, 1.442, -0.517)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Sketchfab_Scene/Camera3D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Sketchfab_Scene/Camera3D:fov")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.03333, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [75.0, 161.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Sketchfab_Scene/Camera3D:current")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_dl12b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sketchfab_Scene:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-7.05291, -67.6821, -0.242809)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sketchfab_Scene/Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.442, -1.382)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Sketchfab_Scene/Camera3D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Sketchfab_Scene/Camera3D:fov")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [75.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Sketchfab_Scene/Camera3D:current")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0267j"]
+_data = {
+"RESET": SubResource("Animation_dl12b"),
+"win": SubResource("Animation_5vqn6")
+}
+
 [node name="RunGame" type="Node3D"]
+script = ExtResource("1_47egi")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 2.577, 1.729)
-far = 100.0
-
-[node name="3DRunPlayer" parent="." instance=ExtResource("1_0s5xi")]
+[node name="3DRunPlayer" parent="." groups=["3Dplayer"] instance=ExtResource("1_0s5xi")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.101, -0.958)
 
 [node name="World Collision" type="Node3D" parent="."]
@@ -100,3 +397,91 @@ libraries = {
 "": SubResource("AnimationLibrary_83n7w")
 }
 autoplay = "SpinSky"
+
+[node name="CameraHandle" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.36, 0, 0, 0, 1, 0, 1.101, -0.958)
+
+[node name="Camera3D" type="Camera3D" parent="CameraHandle"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 2.14175, 2.56961)
+current = true
+far = 100.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CameraHandle"]
+libraries = {
+"": SubResource("AnimationLibrary_3cm36")
+}
+autoplay = "game_start"
+
+[node name="Street Name" type="Label" parent="CameraHandle"]
+offset_right = 1154.0
+offset_bottom = 653.0
+text = "GO TO"
+label_settings = ExtResource("5_n70y5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="CameraHandle"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1044.0
+offset_right = 1.0
+offset_bottom = -550.0
+
+[node name="Label" type="Label" parent="CameraHandle/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -3.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "00"
+label_settings = SubResource("LabelSettings_5xce6")
+horizontal_alignment = 1
+
+[node name="WinScreen" type="Node3D" parent="."]
+
+[node name="Estate" parent="WinScreen" instance=ExtResource("6_ssq3n")]
+transform = Transform3D(0.999391, 0.0348995, 0, -0.0348995, 0.999391, 0, 0, 0, 1, -1.70485, -67.98, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WinScreen/Estate"]
+libraries = {
+"": SubResource("AnimationLibrary_0267j")
+}
+
+[node name="Sketchfab_Scene" parent="WinScreen" instance=ExtResource("7_xjv7p")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.05291, -67.6821, -0.242809)
+
+[node name="Skeleton3D" parent="WinScreen/Sketchfab_Scene/Sketchfab_model/Walking_fbx/Object_2/RootNode/Object_4" index="0"]
+bones/1/position = Vector3(0.575762, 17.4452, -0.170823)
+bones/1/rotation = Quaternion(-0.00517884, 0.0880732, -0.0322002, 0.99558)
+bones/2/rotation = Quaternion(0.00891461, -0.00808564, 0.0213764, 0.999699)
+bones/3/rotation = Quaternion(0.0143016, -0.0201737, 0.00654543, 0.999673)
+bones/4/rotation = Quaternion(-0.02555, -0.0199433, 0.00216328, 0.999472)
+bones/5/rotation = Quaternion(-0.0156747, -0.01018, -0.00842665, 0.99979)
+bones/6/rotation = Quaternion(-0.0118593, -0.033483, 0.00310017, 0.999364)
+bones/8/rotation = Quaternion(-0.602207, -0.441153, 0.355641, -0.562361)
+bones/9/rotation = Quaternion(0.575572, 0.0871546, 0.011682, 0.81301)
+bones/10/rotation = Quaternion(0.081741, -0.476119, 0.297169, 0.823602)
+bones/12/rotation = Quaternion(0.535711, -0.456283, 0.496203, 0.508529)
+bones/13/rotation = Quaternion(0.551089, -0.309537, 0.0280059, 0.774405)
+bones/14/rotation = Quaternion(0.0119372, 0.423739, -0.276709, 0.862401)
+bones/16/rotation = Quaternion(-0.0122123, 0.401616, 0.915619, 0.014072)
+bones/17/rotation = Quaternion(-0.758862, 0.00223522, 0.10922, 0.642024)
+bones/18/rotation = Quaternion(0.407765, -0.136402, 0.0157152, 0.902704)
+bones/19/rotation = Quaternion(0.670639, -0.211667, -0.0140514, 0.710804)
+bones/21/rotation = Quaternion(-0.101574, 0.00955836, 0.986891, -0.125054)
+bones/22/rotation = Quaternion(-0.232334, 0.00385082, -0.053141, 0.971176)
+bones/23/rotation = Quaternion(0.524104, 0.146817, -0.0923204, 0.833808)
+bones/24/rotation = Quaternion(0.460766, 0.102266, -0.0437963, 0.880522)
+
+[node name="AnimationPlayer" parent="WinScreen/Sketchfab_Scene" index="1"]
+autoplay = "mixamo_com"
+
+[node name="Camera3D" type="Camera3D" parent="WinScreen/Sketchfab_Scene"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 1.442, -1.382)
+current = true
+
+[editable path="WinScreen/Sketchfab_Scene"]
