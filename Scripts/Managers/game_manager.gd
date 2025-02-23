@@ -24,11 +24,11 @@ static func swap_music():
 	match instance.current_song:
 		Music.CHIPTUNE:
 			instance.grinch_theme.volume_db = 0
-			instance.grinch_chiptune.volume_db = -80
+			instance.grinch_chiptune.volume_db = -30
 			instance.current_song = Music.NORMAL
 		Music.NORMAL:
 			instance.grinch_theme.volume_db = -80
-			instance.grinch_chiptune.volume_db = 0
+			instance.grinch_chiptune.volume_db = -30
 			instance.current_song = Music.CHIPTUNE
 
 static func play_music():

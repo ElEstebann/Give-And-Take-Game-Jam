@@ -18,6 +18,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5rg7e")
 
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+show_behind_parent = true
+offset_left = -217.0
+offset_top = -274.0
+offset_right = 327.0
+offset_bottom = 286.0
+mouse_force_pass_scroll_events = false
+stream = ExtResource("2_xy5j7")
+autoplay = true
+loop = true
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
 offset_right = 40.0
@@ -53,17 +64,6 @@ text = "Game Over"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
-
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-show_behind_parent = true
-layout_mode = 0
-offset_left = -217.0
-offset_top = -274.0
-offset_right = 327.0
-offset_bottom = 286.0
-stream = ExtResource("2_xy5j7")
-autoplay = true
-loop = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

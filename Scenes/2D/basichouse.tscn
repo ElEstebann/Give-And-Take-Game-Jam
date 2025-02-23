@@ -1,7 +1,6 @@
-[gd_scene load_steps=85 format=4 uid="uid://bk37v10udd8p4"]
+[gd_scene load_steps=80 format=4 uid="uid://bk37v10udd8p4"]
 
 [ext_resource type="Texture2D" uid="uid://bypjmvqapf7g" path="res://Sprites/christmas-village-asset-pack/exit.png" id="1_4ib8a"]
-[ext_resource type="Script" path="res://Scripts/2D/random_item_generation.gd" id="1_7hbj6"]
 [ext_resource type="Script" path="res://Scripts/2D/task.gd" id="1_m84gx"]
 [ext_resource type="Texture2D" uid="uid://b7e5nksw35ayf" path="res://Sprites/christmas-village-asset-pack/floor-tile.png" id="3_whlij"]
 [ext_resource type="Texture2D" uid="uid://cgw6pwkhabjbl" path="res://Sprites/christmas-village-asset-pack/floor-tileset.png" id="4_1w6v3"]
@@ -32,15 +31,11 @@
 [ext_resource type="Texture2D" uid="uid://dmtihhejh0upl" path="res://Sprites/christmas-village-asset-pack/present1.png" id="31_up8rp"]
 [ext_resource type="Texture2D" uid="uid://cl0gcypvrmpqp" path="res://Sprites/christmas-village-asset-pack/present2.png" id="32_uxwcm"]
 [ext_resource type="Texture2D" uid="uid://jnypp5fwbjg5" path="res://Sprites/christmas-village-asset-pack/present3.png" id="33_gteu6"]
-[ext_resource type="Texture2D" uid="uid://cvjby54ryifc6" path="res://Sprites/sierrassets furniture pack/sierrassets furniture pack/furniture/individual sprites/part-Slice 16.png" id="33_rh00a"]
 [ext_resource type="Texture2D" uid="uid://bnvmqjba6wui3" path="res://Sprites/christmas-village-asset-pack/present4.png" id="34_6hugb"]
 [ext_resource type="Texture2D" uid="uid://yvlxx28jg3xd" path="res://Sprites/christmas-village-asset-pack/small-tree.png" id="35_1w48q"]
 [ext_resource type="Texture2D" uid="uid://s4xy0wjbcweq" path="res://Sprites/christmas-village-asset-pack/stocking.png" id="36_62b6g"]
 [ext_resource type="Texture2D" uid="uid://d4nagsg1ylpui" path="res://Sprites/sierrassets furniture pack/sierrassets furniture pack/furniture/individual sprites/part-Slice 148.png" id="36_s7ayi"]
 [ext_resource type="Texture2D" uid="uid://c33di2a8m0c05" path="res://Sprites/christmas-village-asset-pack/wreath.png" id="37_77c2e"]
-[ext_resource type="PackedScene" uid="uid://b8qr2max1j0jf" path="res://Scenes/2D/Steal_Gift_Interaction.tscn" id="39_so8qo"]
-[ext_resource type="SpriteFrames" uid="uid://bnjadv53dpwv1" path="res://Sprites/SpriteFrames/ToyChest.tres" id="40_4i0eg"]
-[ext_resource type="Texture2D" uid="uid://bl23rogrwo736" path="res://Sprites/sierrassets furniture pack/sierrassets furniture pack/furniture/individual sprites/part-Slice 115.png" id="42_8lpl2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tgp1q"]
 texture = ExtResource("1_4ib8a")
@@ -759,26 +754,3 @@ position = Vector2(242, 146)
 tile_set = SubResource("TileSet_3koo4")
 
 [node name="Give_Take_Items" type="Node" parent="."]
-
-[node name="Node2D" type="Node2D" parent="."]
-script = ExtResource("1_7hbj6")
-object = Array[NodePath]([NodePath("Part-slice115"), NodePath("Part-slice16")])
-
-[node name="Part-slice115" type="Sprite2D" parent="Node2D"]
-position = Vector2(175.5, 241.5)
-scale = Vector2(1.6875, 1.58333)
-texture = ExtResource("42_8lpl2")
-
-[node name="Part-slice16" type="Sprite2D" parent="Node2D"]
-position = Vector2(246, 238)
-scale = Vector2(2.25, 1.57143)
-texture = ExtResource("33_rh00a")
-
-[node name="Toy Chest" parent="." instance=ExtResource("39_so8qo")]
-position = Vector2(219, 193)
-path = "ToyChest"
-
-[node name="ToyChest" type="AnimatedSprite2D" parent="Toy Chest"]
-position = Vector2(-1, 2)
-sprite_frames = ExtResource("40_4i0eg")
-animation = &"give"
