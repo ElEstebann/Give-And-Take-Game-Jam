@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqsyty3gaiy1p"]
+[gd_scene load_steps=3 format=3 uid="uid://bqsyty3gaiy1p"]
 
 [ext_resource type="Script" path="res://Scenes/Managers/game_over.gd" id="1_5rg7e"]
+[ext_resource type="VideoStream" path="res://Dancing_Gif.ogv" id="2_xy5j7"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -38,6 +39,7 @@ text = "Quit"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+modulate = Color(0, 0, 0, 1)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -51,6 +53,17 @@ text = "Game Over"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -217.0
+offset_top = -274.0
+offset_right = 327.0
+offset_bottom = 286.0
+stream = ExtResource("2_xy5j7")
+autoplay = true
+loop = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

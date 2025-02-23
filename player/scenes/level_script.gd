@@ -79,6 +79,10 @@ func _set_presents_label(num_left : int) -> void:
 	if num_left <= 0:
 		var c = valid_color.to_html(false)
 		text = "[color=#%s]CONGRATULATIONS!![/color]" % c
+		await get_tree().create_timer(1).timeout
+		await get_tree().process_frame
+		await get_tree().physics_frame
+		for x in range(50): await get_tree().physics_frame
 		get_tree().change_scene_to_file("res://Scenes/3D/RunGame.tscn")
 	else:
 		var c = invalid_color.to_html(false)
