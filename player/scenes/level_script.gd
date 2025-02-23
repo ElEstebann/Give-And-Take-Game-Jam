@@ -82,6 +82,7 @@ func _set_presents_label(num_left : int) -> void:
 		text = "[color=#%s]CONGRATULATIONS!![/color]" % c
 		GameManager.difficulty_up()
 		GameManager.score_up()
+		GameManager.play_yay()
 		get_tree().change_scene_to_file("res://Scenes/3D/RunGame.tscn")
 	else:
 		var c = invalid_color.to_html(false)

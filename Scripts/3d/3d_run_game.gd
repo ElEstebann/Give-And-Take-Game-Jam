@@ -21,6 +21,8 @@ var street_suffixes = [
 
 var time_left = 15
 
+var is_game_over = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$"CameraHandle/Street Name".text = "GO TO\n" + get_street_name().to_upper()
@@ -30,8 +32,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	time_left -= delta
 	update_timer()
-	if(time_left < 0):
+	if(time_left <= 0 && !is_game_over):
 		end_game()
+		
 	
 	
 	
@@ -42,9 +45,13 @@ func update_timer():
 	$CameraHandle/Panel/Label.text = str(ceil(time_left))
 	
 func end_game():
+	is_game_over = true
 	%"3DRunPlayer".position = Vector3(-999,-999,-999)
+	%"3DRunPlayer".set_physics_process(false)
 	$WinScreen/Estate/AnimationPlayer.play("win")
 	$CameraHandle/Panel.visible = false
+	GameManager.play_laugh()
+	
 
 
 

@@ -29,3 +29,7 @@ obstacles_on_start = true
 [node name="RoadChunk5" parent="Chunks" instance=ExtResource("1_l4vvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -113.924)
 obstacles_on_start = true
+
+[node name="RoadChunk7" parent="Chunks" instance=ExtResource("1_l4vvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -142.405)
+obstacles_on_start = true

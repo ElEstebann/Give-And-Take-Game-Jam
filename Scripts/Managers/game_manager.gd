@@ -13,6 +13,14 @@ var PlayerHealth = "."
 
 @onready var grinch_chiptune_volume = $GrinchChiptune.volume_db
 @onready var grinch_theme_volume = $GrinchTheme.volume_db
+@onready var damage_sfx: AudioStreamPlayer = $sfx/damaged
+@onready var laugh: AudioStreamPlayer = $sfx/Laugh
+@onready var yay: AudioStreamPlayer = $sfx/Yay
+@onready var sfx: Node = $sfx
+@onready var jump: AudioStreamPlayer = $sfx/Jump
+@onready var christmas: AudioStreamPlayer = $sfx/Christmas
+@onready var ding: AudioStreamPlayer = $sfx/Ding
+@onready var merrychristmas: AudioStreamPlayer = $sfx/Merrychristmas
 
 
 enum Music { CHIPTUNE,NORMAL}
@@ -61,13 +69,14 @@ static func play_song(song):
 static func damage() -> bool:
 	instance.health -= 1
 	print("HEALTH: " + str(instance.health))
+	instance.damage_sfx.play()
 	if(instance.health <= 0):
 		game_over()
 		return true
+	
 	return false
 
 static func game_over():
-	instance.health = MAX_HEALTH
 	instance.difficulty = 1
 	difficulty_update()
 	instance.get_tree().change_scene_to_file("res://Scenes/Managers/game_over.tscn")
@@ -79,7 +88,32 @@ static func difficulty_up():
 static func difficulty_update():
 	instance.grinch_chiptune.pitch_scale = 1 + (float(instance.difficulty - 1) / 50.0)
 	instance.grinch_theme.pitch_scale = 1 + (float(instance.difficulty - 1) / 50.0)
+	for sound in instance.sfx.get_children():
+		sound.pitch_scale =  1 + (float(instance.difficulty - 1) / 50.0)
 	Engine.time_scale = 1 + (float(instance.difficulty - 1) / 50.0)
 	
+static func play_laugh():
+	instance.laugh.play()
+
+static func play_yay():
+	instance.yay.play()
+	
+static func play_jump():
+	instance.jump.play()
+	
+static func play_christmas():
+	instance.christmas.play()
+
+static func play_ding():
+	instance.ding.play()
+
 static func score_up():
 	instance.score += 1
+
+static func game_starting():
+	#instance.merrychristmas.play()
+	instance.score = 0
+	instance.health = MAX_HEALTH
+
+static func get_score():
+	return instance.score

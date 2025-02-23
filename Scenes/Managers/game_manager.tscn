@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cejglvg3gmgwd"]
+[gd_scene load_steps=11 format=3 uid="uid://cejglvg3gmgwd"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/game_manager.gd" id="1_pdvqm"]
 [ext_resource type="AudioStream" uid="uid://diarsnd5qcqyg" path="res://Assets/Audio/Music/Grinch chiptune.mp3" id="2_top80"]
 [ext_resource type="AudioStream" uid="uid://lcfalsborqim" path="res://Assets/Audio/Music/Grinch theme.mp3" id="3_jqsoc"]
+[ext_resource type="AudioStream" uid="uid://dy6wfcxhqv5ds" path="res://Assets/Audio/sfx/yay.mp3" id="4_sfwso"]
+[ext_resource type="AudioStream" uid="uid://bc4gweqhrwssg" path="res://Assets/Audio/sfx/deltarune-explosion.mp3" id="4_u3y8c"]
+[ext_resource type="AudioStream" uid="uid://dy2bkx22q2sgf" path="res://Assets/Audio/sfx/laugh.mp3" id="5_kd5tx"]
+[ext_resource type="AudioStream" uid="uid://bwj6x0jtcght5" path="res://Assets/Audio/sfx/jump.mp3" id="7_d45x7"]
+[ext_resource type="AudioStream" uid="uid://cmll8rmne21dv" path="res://Assets/Audio/sfx/christmas.mp3" id="8_i6sqp"]
+[ext_resource type="AudioStream" uid="uid://bp8y2wbj1w7r" path="res://Assets/Audio/sfx/ding.mp3" id="9_rjyfu"]
+[ext_resource type="AudioStream" uid="uid://bhkf2awapn0wm" path="res://Assets/Audio/sfx/merrychristmas.mp3" id="10_wkvet"]
 
 [node name="GameManager" type="Node"]
 process_mode = 3
@@ -17,5 +24,35 @@ parameters/looping = true
 stream = ExtResource("3_jqsoc")
 volume_db = -20.0
 parameters/looping = true
+
+[node name="sfx" type="Node" parent="."]
+
+[node name="Yay" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource("4_sfwso")
+volume_db = -20.0
+
+[node name="damaged" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource("4_u3y8c")
+volume_db = -20.0
+
+[node name="Laugh" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource("5_kd5tx")
+volume_db = -20.0
+
+[node name="Jump" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource("7_d45x7")
+volume_db = -20.0
+
+[node name="Christmas" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource("8_i6sqp")
+volume_db = -20.0
+
+[node name="Ding" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource("9_rjyfu")
+volume_db = -20.0
+
+[node name="Merrychristmas" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource("10_wkvet")
+volume_db = -20.0
 
 [connection signal="ready" from="." to="." method="_on_ready"]

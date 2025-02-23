@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/2D/Task_Manager.gd" id="1_bdmbm"]
 [ext_resource type="Texture2D" uid="uid://qoti1waugj1n" path="res://Sprites/christmas-village-asset-pack/parchment-menu.png" id="2_e3qw2"]
 [ext_resource type="PackedScene" uid="uid://4es6043w5k43" path="res://Scenes/Managers/pause_menu.tscn" id="3_s08rh"]
-[ext_resource type="PackedScene" uid="uid://d25g3sb1ajwpn" path="res://player_health.tscn" id="4_66rin"]
+[ext_resource type="PackedScene" uid="uid://cxpsfded8f45h" path="res://player_health.tscn" id="4_66rin"]
 
 [node name="UiManager" type="Control"]
 process_mode = 3
@@ -54,3 +54,4 @@ layout_mode = 1
 
 [node name="PlayerHealth" parent="." instance=ExtResource("4_66rin")]
 layout_mode = 1
+mouse_filter = 2

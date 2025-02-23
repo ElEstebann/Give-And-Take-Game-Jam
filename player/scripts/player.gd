@@ -56,6 +56,7 @@ var IS_ANIMATING : bool = false
 @onready var present_pos = $PresentPos
 func spawn_present() -> void:
 	if IS_ANIMATING: return
+	GameManager.play_christmas()
 	var pos : Vector2 = global_position
 	var offset = present_pos.position
 	if anim.flip_h:

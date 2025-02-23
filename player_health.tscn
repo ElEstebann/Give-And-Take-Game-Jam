@@ -1,9 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://d25g3sb1ajwpn"]
+[gd_scene load_steps=2 format=3 uid="uid://cxpsfded8f45h"]
 
 [ext_resource type="Script" path="res://player_health.gd" id="1_7b15e"]
 
 [node name="PlayerHealth" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,10 +12,8 @@ grow_vertical = 2
 script = ExtResource("1_7b15e")
 
 [node name="Health" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="HP" type="RichTextLabel" parent="Health"]
-visible = false
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0

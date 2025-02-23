@@ -30,5 +30,6 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if "present" in body.name.to_lower():
 		level_manager.instance.OnPresentPlaced.emit()
+		GameManager.play_ding()
 		#print("Hit (3): " , body.name)
 		self.queue_free()

@@ -25,15 +25,17 @@ enum TaskStatus{
 @export var score_amount: int
 
 func _process(_delta: float) -> void:
-	if get_tree().current_scene == null:
+	var scene = get_tree().current_scene
+	if scene == null:
 		return
 		
-	if get_tree().current_scene.name == "RunGame" || get_tree().current_scene.name == "TestMain":
+	if scene.name == "RunGame" || scene.name == "TestMain":
 		$PlayerHealth.visible = true
 	else:
-		$PlayerHealth.visible = true
+		$PlayerHealth.visible = false
+	print(scene.name)
 		
-	print(get_tree().current_scene.name)
+	#print(get_tree().current_scene.name)
 	if Input.is_action_just_pressed("Pause"):
 		$"Pause Menu".visible = true
 		get_tree().paused = true

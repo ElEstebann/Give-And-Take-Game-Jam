@@ -1,7 +1,55 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqsyty3gaiy1p"]
+[gd_scene load_steps=8 format=3 uid="uid://bqsyty3gaiy1p"]
 
 [ext_resource type="Script" path="res://Scenes/Managers/game_over.gd" id="1_5rg7e"]
 [ext_resource type="VideoStream" path="res://Dancing_Gif.ogv" id="2_xy5j7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xwinw"]
+font_size = 66
+font_color = Color(1, 1, 0, 1)
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_c8411"]
+font_size = 66
+outline_size = 12
+
+[sub_resource type="Animation" id="Animation_6rl3h"]
+resource_name = "shiny_text"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1.03526, 1, 0.870551, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5gpcj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sta4i"]
+_data = {
+"RESET": SubResource("Animation_5gpcj"),
+"shiny_text": SubResource("Animation_6rl3h")
+}
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -66,5 +114,29 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -123.0
+offset_top = -241.0
+offset_right = 238.0
+offset_bottom = -150.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "SCORE: "
+label_settings = SubResource("LabelSettings_xwinw")
+
+[node name="Label2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "000"
+label_settings = SubResource("LabelSettings_c8411")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HBoxContainer/Label2"]
+libraries = {
+"": SubResource("AnimationLibrary_sta4i")
+}
+autoplay = "shiny_text"
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="ready" from="HBoxContainer/Label2" to="." method="_on_label_2_ready"]

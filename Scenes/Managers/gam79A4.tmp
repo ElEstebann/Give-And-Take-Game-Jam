@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cejglvg3gmgwd"]
+
+[ext_resource type="Script" path="res://Scripts/Managers/game_manager.gd" id="1_pdvqm"]
+[ext_resource type="AudioStream" uid="uid://diarsnd5qcqyg" path="res://Assets/Audio/Music/Grinch chiptune.mp3" id="2_top80"]
+[ext_resource type="AudioStream" uid="uid://lcfalsborqim" path="res://Assets/Audio/Music/Grinch theme.mp3" id="3_jqsoc"]
+[ext_resource type="AudioStream" uid="uid://bc4gweqhrwssg" path="res://Assets/Audio/sfx/deltarune-explosion.mp3" id="4_u3y8c"]
+
+[node name="GameManager" type="Node"]
+process_mode = 3
+script = ExtResource("1_pdvqm")
+
+[node name="GrinchChiptune" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_top80")
+volume_db = -20.0
+parameters/looping = true
+
+[node name="GrinchTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jqsoc")
+volume_db = -20.0
+parameters/looping = true
+
+[node name="sfx" type="Node" parent="."]
+
+[node name="damaged" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource("4_u3y8c")
+
+[connection signal="ready" from="." to="." method="_on_ready"]
