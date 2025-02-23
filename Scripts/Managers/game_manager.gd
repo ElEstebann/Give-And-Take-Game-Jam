@@ -2,7 +2,7 @@ extends Node
 
 
 const MAX_HEALTH = 4
-var difficulty = 1
+var difficulty = 10
 var score = 0
 var health = MAX_HEALTH
 
@@ -22,6 +22,7 @@ func _on_ready() -> void:
 	if instance == null:
 		instance = self
 	play_music()
+	difficulty_update()
 	
 static func swap_music():
 	print("SWAPPING SONGS")
@@ -65,10 +66,18 @@ static func damage() -> bool:
 
 static func game_over():
 	instance.health = MAX_HEALTH
+	instance.difficulty = 1
+	difficulty_update()
 	instance.get_tree().change_scene_to_file("res://Scenes/Managers/game_over.tscn")
 	
 static func difficulty_up():
 	instance.difficulty += 1
+	difficulty_update()
+	
+static func difficulty_update():
+	instance.grinch_chiptune.pitch_scale = 1 + (float(instance.difficulty) / 50.0)
+	instance.grinch_theme.pitch_scale = 1 + (float(instance.difficulty) / 50.0)
+	Engine.time_scale = 1 + (float(instance.difficulty) / 50.0)
 	
 static func score_up():
 	instance.score += 1
