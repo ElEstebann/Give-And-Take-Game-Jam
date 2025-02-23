@@ -78,9 +78,13 @@ func _idle_after():
 @export var flicker_time : float = 0.3
 @export var flicker_counts : int = 5
 var IS_TAKING_DAMAGE : bool = false
-func TakeDamage():
-	if IS_TAKING_DAMAGE: return
+func TakeDamage() -> bool:
+	if IS_TAKING_DAMAGE: return false
+	if GameManager.damage():
+		#gameover detected
+		return true
 	IS_TAKING_DAMAGE = true
+	
 	var start_mod : Color = modulate
 	for _i in range(flicker_counts):
 		modulate = Color.RED
@@ -88,3 +92,4 @@ func TakeDamage():
 		modulate = start_mod
 		await get_tree().create_timer(flicker_time).timeout
 	IS_TAKING_DAMAGE = false
+	return false

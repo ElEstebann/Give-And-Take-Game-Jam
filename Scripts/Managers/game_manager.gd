@@ -51,11 +51,13 @@ static func play_song(song):
 
 	
 
-static func damage():
+static func damage() -> bool:
 	instance.health -= 1
 	print("HEALTH: " + str(instance.health))
 	if(instance.health <= 0):
 		game_over()
+		return true
+	return false
 
 static func game_over():
 	instance.health = MAX_HEALTH
