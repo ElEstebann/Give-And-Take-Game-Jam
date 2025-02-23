@@ -15,12 +15,14 @@ agent_radius = 70.0
 specular_color = Color(0.454902, 0.454902, 0.317647, 1)
 
 [node name="TestMain" type="Node2D"]
+position = Vector2(0, 1)
 script = ExtResource("1_an570")
 screen_padding = 35.0
 invalid_color = Color(0.953207, 0.208993, 0.117469, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_8p2sr")]
-position = Vector2(613, 157)
+position = Vector2(33, 274)
+scale = Vector2(0.931622, 1.23398)
 
 [node name="World" parent="." instance=ExtResource("2_wls1j")]
 position = Vector2(-37, -43)
@@ -28,6 +30,7 @@ scale = Vector2(1.84, 2.16)
 
 [node name="BasicEnemy" parent="." instance=ExtResource("3_r0cf1")]
 position = Vector2(934, 479)
+scale = Vector2(0.7, 0.7)
 movement_speed = 55.0
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]

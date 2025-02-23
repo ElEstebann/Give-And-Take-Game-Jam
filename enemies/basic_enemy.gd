@@ -28,7 +28,7 @@ func _get_player() -> player:
 	
 	return p
 var waited : bool = false
-func _physics_process(delta):
+func _physics_process(_delta):
 	var p : player = _get_player()
 	if p == null: 
 		return

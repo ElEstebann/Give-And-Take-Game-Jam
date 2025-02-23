@@ -64,11 +64,6 @@ func _spawn_crosshair_at(pos : Vector2) -> void:
 	gui.add_child(crosshair)
 	crosshair.position = pos
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 static func Bake_Navmesh():
 	if instance == null: return
 	instance.nav_region.bake_navigation_polygon()
