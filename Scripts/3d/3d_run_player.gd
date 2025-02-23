@@ -5,6 +5,12 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 10
 const GRAVITY_MULT = 2.5
 
+@onready var animation_player: AnimationPlayer = $Sketchfab_Scene/AnimationPlayer2
+
+@export var invulnerable = false
+
+func _enter_tree():
+	add_to_group("3Dplayer")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -29,3 +35,21 @@ func _physics_process(delta: float) -> void:
 	velocity.z = 0
 
 	move_and_slide()
+
+
+func _on_hitbox_area_entered(area: Area3D) -> void:
+	if(not invulnerable):
+		on_damaged()
+	
+func on_damaged() -> void:
+	#print("Damaged!")
+	animation_player.play("3d_player_damaged")
+	invulnerable = true
+	$InvulnerabilityTimer.start()
+
+
+func _on_invulnerability_timer_timeout() -> void:
+	#animation_player.stop(false)
+	animation_player.play("normal")
+	invulnerable = false
+	#print("timer done")

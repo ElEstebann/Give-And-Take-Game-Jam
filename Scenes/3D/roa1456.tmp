@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://myiawf4kjn3t"]
+
+[ext_resource type="Script" path="res://Scripts/3d/random_chunk.gd" id="1_0e5q0"]
+[ext_resource type="PackedScene" uid="uid://dw0h4wcaue5c2" path="res://Assets/3DModels/kenney_city-kit-suburban/Models/GLTF format/driveway_long.glb" id="1_3p6fu"]
+[ext_resource type="PackedScene" uid="uid://bqbo5bjedt1t" path="res://Scenes/3D/estate.tscn" id="2_r7kld"]
+[ext_resource type="PackedScene" uid="uid://brpw3j4006wm3" path="res://Scenes/3D/random_obstacles.tscn" id="4_qhm8q"]
+[ext_resource type="Script" path="res://Scripts/3d/random_obstacles_generator.gd" id="4_w2vre"]
+
+[node name="RoadChunk" type="Node3D"]
+script = ExtResource("1_0e5q0")
+
+[node name="driveway_long2f" parent="." instance=ExtResource("1_3p6fu")]
+transform = Transform3D(35, 0, 0, 0, 35, 0, 0, 0, 71.5506, 0, 0, 0)
+
+[node name="LeftSide" parent="." instance=ExtResource("2_r7kld")]
+
+[node name="RightSide" parent="." instance=ExtResource("2_r7kld")]
+transform = Transform3D(-0.999391, -0.0348995, -1.50996e-07, -0.0348995, 0.999391, -1.33776e-17, 1.50904e-07, 5.26968e-09, -1, -0.675, 0.17, 0)
+is_flipped = true
+
+[node name="Obstacles" type="Node3D" parent="."]
+script = ExtResource("4_w2vre")
+
+[node name="Row1" type="Node3D" parent="Obstacles"]
+
+[node name="RandomObstacle" parent="Obstacles/Row1" instance=ExtResource("4_qhm8q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34, 11)
+
+[node name="RandomObstacle2" parent="Obstacles/Row1" instance=ExtResource("4_qhm8q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.340368, 1)
+
+[node name="RandomObstacle3" parent="Obstacles/Row1" instance=ExtResource("4_qhm8q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34, -9)
+
+[node name="Lane1" type="Node3D" parent="Obstacles/Row1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.340368, 11)
+
+[node name="Lane2" type="Node3D" parent="Obstacles/Row1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.340368, 1)
+
+[node name="Lane3" type="Node3D" parent="Obstacles/Row1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.340368, -9)

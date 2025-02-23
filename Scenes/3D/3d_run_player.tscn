@@ -1,9 +1,65 @@
-[gd_scene load_steps=4 format=3 uid="uid://b36qhmnygyvj5"]
+[gd_scene load_steps=8 format=3 uid="uid://b36qhmnygyvj5"]
 
 [ext_resource type="PackedScene" uid="uid://c12kt4gwq2ije" path="res://Scenes/3D/smolGrinch.tscn" id="1_mv2xd"]
 [ext_resource type="Script" path="res://Scripts/3d/3d_run_player.gd" id="1_uctdc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mp3l0"]
+
+[sub_resource type="Animation" id="Animation_08qys"]
+resource_name = "3d_player_damaged"
+length = 0.15
+loop_mode = 2
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.142857),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_weec2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_pjmbf"]
+resource_name = "normal"
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_avl65"]
+_data = {
+"3d_player_damaged": SubResource("Animation_08qys"),
+"RESET": SubResource("Animation_weec2"),
+"normal": SubResource("Animation_pjmbf")
+}
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_uctdc")
@@ -13,3 +69,21 @@ shape = SubResource("CapsuleShape3D_mp3l0")
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("1_mv2xd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.97709, 0)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Sketchfab_Scene"]
+libraries = {
+"": SubResource("AnimationLibrary_avl65")
+}
+
+[node name="Hitbox" type="Area3D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Hitbox"]
+shape = SubResource("CapsuleShape3D_mp3l0")
+
+[node name="InvulnerabilityTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="InvulnerabilityTimer" to="." method="_on_invulnerability_timer_timeout"]

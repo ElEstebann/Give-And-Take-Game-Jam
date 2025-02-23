@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2mddu0s68udh"]
+
+[ext_resource type="PackedScene" uid="uid://c28wh2hu64ide" path="res://Assets/3DModels/spike_trap_hide_animation/scene.gltf" id="1_42i6n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ubj8q"]
+size = Vector3(1.77441, 0.572632, 1)
+
+[node name="SpikeTrap" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_42i6n")]
+
+[node name="Skeleton3D" parent="Sketchfab_Scene/Sketchfab_model/224c7a753f70488ca623cbcfd856322a_fbx/Object_2/RootNode/Armature/Object_5" index="0"]
+bones/2/position = Vector3(0, 0.374375, 8.67362e-19)
+bones/4/position = Vector3(0.26471, 0.197551, 8.67362e-19)
+
+[node name="AnimationPlayer" parent="Sketchfab_Scene" index="1"]
+autoplay = "Armature|Armature|SpikeTrap_HideAnimation|BaseLayer"
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012207, 0.283875, 0)
+shape = SubResource("BoxShape3D_ubj8q")
+
+[editable path="Sketchfab_Scene"]
