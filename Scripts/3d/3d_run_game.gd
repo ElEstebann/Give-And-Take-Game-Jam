@@ -19,7 +19,7 @@ var street_suffixes = [
 	"Lane", "Way", "Court", "Place", "Terrace"
 ]
 
-var time_left = 5
+var time_left = 30
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -53,4 +53,4 @@ func end_game():
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	get_tree().change_scene_to_file("res://player/scenes/test_main.tscn")
-	GameManager.instance.swap_music()
+	GameManager.swap_music()
