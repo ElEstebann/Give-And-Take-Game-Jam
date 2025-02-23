@@ -1,0 +1,27 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://bnjadv53dpwv1"]
+
+[ext_resource type="Texture2D" uid="uid://bl23rogrwo736" path="res://Sprites/sierrassets furniture pack/sierrassets furniture pack/furniture/individual sprites/part-Slice 115.png" id="1_ti6yp"]
+[ext_resource type="Texture2D" uid="uid://b1pfyrwoxp1dw" path="res://Sprites/ChristmasIconsFree/ChristmasIconsFree/xmasicons.png" id="2_8uk7w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yn1vg"]
+atlas = ExtResource("2_8uk7w")
+region = Rect2(32, 32, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ti6yp")
+}],
+"loop": true,
+"name": &"give",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yn1vg")
+}],
+"loop": true,
+"name": &"take",
+"speed": 5.0
+}]

@@ -1,0 +1,82 @@
+[gd_scene load_steps=7 format=3 uid="uid://bffpg4xi7eyrp"]
+
+[ext_resource type="PackedScene" uid="uid://itog5fxeishp" path="res://player/scenes/player.tscn" id="1_8p2sr"]
+[ext_resource type="Script" path="res://player/scenes/level_script.gd" id="1_an570"]
+[ext_resource type="PackedScene" uid="uid://bk37v10udd8p4" path="res://Scenes/2D/basichouse.tscn" id="2_wls1j"]
+[ext_resource type="PackedScene" uid="uid://hymyhg5qlkwg" path="res://enemies/basic_enemy.tscn" id="3_r0cf1"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_smpnf"]
+vertices = PackedVector2Array(586.25, 633.508, 25.2031, 632.063, 29.7422, 28, 788.75, 28, 1131.31, 634.906, 624.422, 633.609, 1136.68, 35.2578)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 0, 3, 6)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-10, 659, -5, -7, 789, -7, 1172, 1, 1166, 670, 624.327, 668.606, 586.155, 668.508, 0, 667)])
+agent_radius = 70.0
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_veayx"]
+specular_color = Color(0.454902, 0.454902, 0.317647, 1)
+
+[node name="TestMain" type="Node2D"]
+position = Vector2(0, 1)
+script = ExtResource("1_an570")
+screen_padding = 35.0
+invalid_color = Color(0.953207, 0.208993, 0.117469, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_8p2sr")]
+position = Vector2(33, 274)
+scale = Vector2(0.931622, 1.23398)
+
+[node name="World" parent="." instance=ExtResource("2_wls1j")]
+position = Vector2(-37, -43)
+scale = Vector2(1.84, 2.16)
+
+[node name="BasicEnemy" parent="." instance=ExtResource("3_r0cf1")]
+position = Vector2(934, 479)
+scale = Vector2(0.7, 0.7)
+movement_speed = 55.0
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_smpnf")
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="GUI"]
+visible = false
+layout_mode = 0
+offset_left = 33.0
+offset_top = 19.0
+offset_right = 425.0
+offset_bottom = 130.0
+theme_override_font_sizes/font_size = 39
+text = "Place a present"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GUI"]
+visible = false
+layout_mode = 0
+offset_right = 447.0
+offset_bottom = 124.0
+theme_override_font_sizes/normal_font_size = 38
+text = "Place two labels"
+
+[node name="PresentsLabel" type="RichTextLabel" parent="GUI"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 27.0
+offset_right = 472.0
+offset_bottom = 127.0
+theme_override_font_sizes/normal_font_size = 38
+text = "Place two labels"
+
+[node name="TextureRect" type="TextureRect" parent="GUI/PresentsLabel"]
+modulate = Color(0.780392, 0.780392, 0.780392, 0.317647)
+layout_mode = 0
+offset_right = 450.0
+offset_bottom = 102.0
+texture = SubResource("CanvasTexture_veayx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-1, 650, 1169, 650, 1170, -1, -1, -2, -4, 640, -173, 641, -408, 629, -417, -68, -280, -394, 159, -463, 1060, -416, 1395, -289, 1535, -158, 1591, 440, 1497, 873, 1186, 1014, 280, 1027, -153, 939, -483, 833, -486, 640, -305, 641, -120, 649, -53, 651, -8, 642, -3, 642)

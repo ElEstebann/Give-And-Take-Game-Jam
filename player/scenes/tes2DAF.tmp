@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://bffpg4xi7eyrp"]
+
+[ext_resource type="PackedScene" uid="uid://itog5fxeishp" path="res://player/scenes/player.tscn" id="1_8p2sr"]
+[ext_resource type="Script" path="res://player/scenes/level_script.gd" id="1_an570"]
+[ext_resource type="PackedScene" uid="uid://bk37v10udd8p4" path="res://Scenes/2D/basichouse.tscn" id="2_wls1j"]
+[ext_resource type="PackedScene" uid="uid://hymyhg5qlkwg" path="res://enemies/basic_enemy.tscn" id="3_r0cf1"]
+[ext_resource type="PackedScene" uid="uid://w453jokqfv6w" path="res://enemies/present_obstacle.tscn" id="5_4sw7r"]
+[ext_resource type="Texture2D" uid="uid://eb1jxyos25u0" path="res://Sprites/crosshairs_tilesheet_white.png" id="6_vvj6r"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_smpnf"]
+vertices = PackedVector2Array(1136.68, 35.2578, 1131.31, 634.906, 930, 477, 930, 356, 788.75, 28, 814, 356, 586.25, 633.508, 25.2031, 632.063, 29.7422, 28, 624.422, 633.609, 771, 445, 814, 445, 771, 566, 887, 566, 887, 477)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(6, 7, 8, 4, 5), PackedInt32Array(9, 6, 5, 10), PackedInt32Array(5, 11, 10), PackedInt32Array(9, 10, 12), PackedInt32Array(1, 9, 12, 13), PackedInt32Array(2, 1, 13, 14)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-10, 659, -5, -7, 789, -7, 1172, 1, 1166, 670, 624.327, 668.606, 586.155, 668.508, 0, 667)])
+agent_radius = 35.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f13uf"]
+atlas = ExtResource("6_vvj6r")
+region = Rect2(620, 0, 64, 64)
+
+[node name="TestMain" type="Node2D"]
+script = ExtResource("1_an570")
+screen_padding = 35.0
+
+[node name="Player" parent="." instance=ExtResource("1_8p2sr")]
+position = Vector2(613, 157)
+
+[node name="World" parent="." instance=ExtResource("2_wls1j")]
+position = Vector2(-37, -43)
+scale = Vector2(1.84, 2.16)
+
+[node name="BasicEnemy" parent="." instance=ExtResource("3_r0cf1")]
+position = Vector2(934, 479)
+movement_speed = 65.0
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_smpnf")
+
+[node name="Present" parent="NavigationRegion2D" instance=ExtResource("5_4sw7r")]
+
+[node name="Present2" parent="NavigationRegion2D" instance=ExtResource("5_4sw7r")]
+position = Vector2(872, 419)
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="GUI"]
+offset_right = 392.0
+offset_bottom = 111.0
+theme_override_font_sizes/font_size = 39
+text = "Place a present"
+
+[node name="Crosshair" type="Control" parent="GUI"]
+anchors_preset = 0
+offset_left = 229.15
+offset_top = 159.0
+offset_right = 269.15
+offset_bottom = 199.0
+
+[node name="Crosshair" type="TextureRect" parent="GUI/Crosshair"]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_f13uf")

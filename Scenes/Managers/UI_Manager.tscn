@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxhe28s37gnlq"]
+
+[ext_resource type="Script" path="res://Scripts/2D/Task_Manager.gd" id="1_bdmbm"]
+[ext_resource type="Texture2D" uid="uid://qoti1waugj1n" path="res://Sprites/christmas-village-asset-pack/parchment-menu.png" id="2_e3qw2"]
+[ext_resource type="PackedScene" uid="uid://4es6043w5k43" path="res://Scenes/Managers/pause_menu.tscn" id="3_s08rh"]
+
+[node name="UiManager" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bdmbm")
+
+[node name="TaskLog" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Background" type="Sprite2D" parent="TaskLog"]
+modulate = Color(1, 1, 1, 0.458824)
+position = Vector2(104, 76.5)
+scale = Vector2(0.754167, 0.84375)
+texture = ExtResource("2_e3qw2")
+
+[node name="Task Info" type="RichTextLabel" parent="TaskLog"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 216.0
+offset_bottom = 56.0
+text = "Give and Take Gifts"
+scroll_active = false
+tab_size = 16
+
+[node name="Completion" type="RichTextLabel" parent="TaskLog"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 80.0
+offset_top = 48.0
+offset_right = 160.0
+offset_bottom = 140.0
+text = "Taken
+  0/5
+Given
+  0/5"
+fit_content = true
+scroll_active = false
+
+[node name="Pause Menu" parent="." instance=ExtResource("3_s08rh")]
+layout_mode = 1

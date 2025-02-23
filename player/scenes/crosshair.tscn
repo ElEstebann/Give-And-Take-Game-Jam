@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://bh56gsk2wr5h4"]
+
+[ext_resource type="Script" path="res://player/scripts/crosshair.gd" id="1_ymkkk"]
+[ext_resource type="Texture2D" uid="uid://cl0gcypvrmpqp" path="res://Sprites/christmas-village-asset-pack/present2.png" id="2_p2l6s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rqnwe"]
+radius = 47.85
+
+[node name="Take" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 229.15
+offset_top = 159.0
+offset_right = 269.15
+offset_bottom = 199.0
+script = ExtResource("1_ymkkk")
+rotate_speed = 20.0
+size_amplitude = 0.1
+size_frequency = 0.003
+
+[node name="Crosshair" type="TextureRect" parent="."]
+modulate = Color(0, 0.655581, 7.70092e-07, 1)
+layout_mode = 0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_p2l6s")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_rqnwe")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_crosshair_entered"]
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

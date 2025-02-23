@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8qr2max1j0jf"]
+
+[ext_resource type="Script" path="res://Scripts/2D/Interaction.gd" id="1_1ffgn"]
+[ext_resource type="SpriteFrames" uid="uid://bccciiigulgpa" path="res://Sprites/SpriteFrames/Tree.tres" id="2_mwkt8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3ha0r"]
+
+[node name="Steal_Gift_Interaction" type="Node2D"]
+script = ExtResource("1_1ffgn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = ExtResource("2_mwkt8")
+animation = &"take"
+
+[node name="Interaction_Radius" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Radius"]
+scale = Vector2(2.69958, 2.47908)
+shape = SubResource("CircleShape2D_3ha0r")
