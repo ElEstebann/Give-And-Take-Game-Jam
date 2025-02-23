@@ -1,10 +1,12 @@
-extends Node
+class_name gaymanager extends Node
 
 
 const MAX_HEALTH = 4
 var difficulty = 1
 var score = 0
 var health = MAX_HEALTH
+
+var PlayerHealth = "."
 
 @onready var grinch_chiptune: AudioStreamPlayer = $GrinchChiptune
 @onready var grinch_theme: AudioStreamPlayer = $GrinchTheme
