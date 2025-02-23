@@ -46,6 +46,7 @@ func on_damaged() -> void:
 	animation_player.play("3d_player_damaged")
 	invulnerable = true
 	$InvulnerabilityTimer.start()
+	GameManager.damage()
 
 
 func _on_invulnerability_timer_timeout() -> void:

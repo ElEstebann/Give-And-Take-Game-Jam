@@ -54,6 +54,9 @@ func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_inde
 	if body is player:
 		var p : player = body
 		p.TakeDamage()
-	await get_tree().create_timer(attack_cooldown).timeout
+	
+	var tree = get_tree()
+	if tree != null:
+		await tree.create_timer(attack_cooldown).timeout
 	movement_speed = start_speed
 	
