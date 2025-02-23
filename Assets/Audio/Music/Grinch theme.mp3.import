@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://lcfalsborqim"
+path="res://.godot/imported/Grinch theme.mp3-1a53315ffd257fe84120f37ffac0dd0d.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Grinch theme.mp3"
+dest_files=["res://.godot/imported/Grinch theme.mp3-1a53315ffd257fe84120f37ffac0dd0d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

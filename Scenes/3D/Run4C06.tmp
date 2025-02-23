@@ -484,7 +484,4 @@ autoplay = "mixamo_com"
 transform = Transform3D(-1, 0, -2.53518e-06, 0, 1, 0, 2.53518e-06, 0, -1, 0, 1.442, -1.382)
 current = true
 
-[connection signal="animation_finished" from="WinScreen/Estate/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="animation_finished" from="WinScreen/Sketchfab_Scene/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-
 [editable path="WinScreen/Sketchfab_Scene"]
