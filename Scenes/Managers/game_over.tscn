@@ -20,6 +20,7 @@ script = ExtResource("1_5rg7e")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 show_behind_parent = true
+layout_mode = 0
 offset_left = -217.0
 offset_top = -274.0
 offset_right = 327.0

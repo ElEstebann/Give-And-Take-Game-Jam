@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://hymyhg5qlkwg"]
+[gd_scene load_steps=6 format=3 uid="uid://hymyhg5qlkwg"]
 
 [ext_resource type="Script" path="res://enemies/basic_enemy.gd" id="1_6ghc6"]
-[ext_resource type="Texture2D" uid="uid://cyhnqeracggjv" path="res://icon.svg" id="1_o16uj"]
+[ext_resource type="Texture2D" uid="uid://ca0pphwj553wv" path="res://Sprites/XmasCatFree/XmasCatFree/Run.png" id="2_axyng"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0aumr"]
+atlas = ExtResource("2_axyng")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_07gdp"]
 radius = 38.0132
@@ -14,8 +18,9 @@ script = ExtResource("1_6ghc6")
 movement_speed = 65.0
 
 [node name="Icon" type="Sprite2D" parent="."]
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("1_o16uj")
+position = Vector2(-3, -14)
+scale = Vector2(3.30312, 3.17422)
+texture = SubResource("AtlasTexture_0aumr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_07gdp")
