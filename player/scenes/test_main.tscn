@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bffpg4xi7eyrp"]
+[gd_scene load_steps=8 format=3 uid="uid://bffpg4xi7eyrp"]
 
 [ext_resource type="PackedScene" uid="uid://itog5fxeishp" path="res://player/scenes/player.tscn" id="1_8p2sr"]
 [ext_resource type="Script" path="res://player/scenes/level_script.gd" id="1_an570"]
 [ext_resource type="PackedScene" uid="uid://bk37v10udd8p4" path="res://Scenes/2D/basichouse.tscn" id="2_wls1j"]
 [ext_resource type="PackedScene" uid="uid://hymyhg5qlkwg" path="res://enemies/basic_enemy.tscn" id="3_r0cf1"]
+[ext_resource type="Script" path="res://player/scripts/EnemySpawner.gd" id="4_xn1nv"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_smpnf"]
 vertices = PackedVector2Array(586.25, 633.508, 25.2031, 632.063, 29.7422, 28, 788.75, 28, 1131.31, 634.906, 624.422, 633.609, 1136.68, 35.2578)
@@ -27,11 +28,6 @@ scale = Vector2(0.931622, 1.23398)
 [node name="World" parent="." instance=ExtResource("2_wls1j")]
 position = Vector2(-37, -43)
 scale = Vector2(1.84, 2.16)
-
-[node name="BasicEnemy" parent="." instance=ExtResource("3_r0cf1")]
-position = Vector2(934, 479)
-scale = Vector2(0.7, 0.7)
-movement_speed = 55.0
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_smpnf")
@@ -80,3 +76,17 @@ texture = SubResource("CanvasTexture_veayx")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(-1, 650, 1169, 650, 1170, -1, -1, -2, -4, 640, -173, 641, -408, 629, -417, -68, -280, -394, 159, -463, 1060, -416, 1395, -289, 1535, -158, 1591, 440, 1497, 873, 1186, 1014, 280, 1027, -153, 939, -483, 833, -486, 640, -305, 641, -120, 649, -53, 651, -8, 642, -3, 642)
+
+[node name="Enemies" type="Node2D" parent="."]
+script = ExtResource("4_xn1nv")
+
+[node name="BasicEnemy" parent="Enemies" instance=ExtResource("3_r0cf1")]
+position = Vector2(934, 479)
+scale = Vector2(0.605226, 0.587366)
+movement_speed = 55.0
+
+[node name="lowerenemybound" type="Node2D" parent="."]
+position = Vector2(225, 3)
+
+[node name="upperenemybound" type="Node2D" parent="."]
+position = Vector2(1145, 632)

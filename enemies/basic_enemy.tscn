@@ -8,10 +8,10 @@ atlas = ExtResource("2_axyng")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_07gdp"]
-radius = 38.0132
+radius = 29.0172
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ktblc"]
-radius = 100.005
+radius = 38.2753
 
 [node name="BasicEnemy" type="CharacterBody2D"]
 script = ExtResource("1_6ghc6")
