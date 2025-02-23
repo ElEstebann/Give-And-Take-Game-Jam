@@ -10,11 +10,12 @@ script = ExtResource("1_pdvqm")
 
 [node name="GrinchChiptune" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_top80")
+volume_db = -20.0
 parameters/looping = true
 
 [node name="GrinchTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_jqsoc")
-volume_db = -80.0
+volume_db = -20.0
 parameters/looping = true
 
 [connection signal="ready" from="." to="." method="_on_ready"]

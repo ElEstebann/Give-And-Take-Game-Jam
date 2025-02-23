@@ -9,6 +9,10 @@ var health = MAX_HEALTH
 @onready var grinch_chiptune: AudioStreamPlayer = $GrinchChiptune
 @onready var grinch_theme: AudioStreamPlayer = $GrinchTheme
 
+@onready var grinch_chiptune_volume = $GrinchChiptune.volume_db
+@onready var grinch_theme_volume = $GrinchTheme.volume_db
+
+
 enum Music { CHIPTUNE,NORMAL}
 var current_song = Music.NORMAL
 
@@ -23,30 +27,30 @@ static func swap_music():
 	print("SWAPPING SONGS")
 	match instance.current_song:
 		Music.CHIPTUNE:
-			instance.grinch_theme.volume_db = 0
+			instance.grinch_theme.volume_db = instance.grinch_theme_volume
 			instance.grinch_chiptune.volume_db = -80
 			instance.current_song = Music.NORMAL
 		Music.NORMAL:
 			instance.grinch_theme.volume_db = -80
-			instance.grinch_chiptune.volume_db = 0
+			instance.grinch_chiptune.volume_db = instance.grinch_chiptune_volume
 			instance.current_song = Music.CHIPTUNE
 
 static func play_music():
 	instance.grinch_theme.play()
 	instance.grinch_chiptune.play()
-	instance.grinch_theme.volume_db = 0
+	instance.grinch_theme.volume_db = instance.grinch_theme_volume
 	instance.grinch_chiptune.volume_db = -80
 	
 static func play_song(song):
 	match song:
 		Music.CHIPTUNE:
-			instance.grinch_theme.volume_db = 0
-			instance.grinch_chiptune.volume_db = -80
-			instance.current_song = Music.NORMAL
-		Music.NORMAL:
 			instance.grinch_theme.volume_db = -80
-			instance.grinch_chiptune.volume_db = 0
-			instance.current_song = Music.CHIPTUNE
+			instance.grinch_chiptune.volume_db = instance.grinch_chiptune_volume
+			
+		Music.NORMAL:
+			instance.grinch_theme.volume_db = instance.grinch_theme_volume
+			instance.grinch_chiptune.volume_db = -80
+	instance.current_song = song
 
 
 	
