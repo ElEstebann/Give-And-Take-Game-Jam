@@ -42,7 +42,7 @@ func update_timer():
 	$CameraHandle/Panel/Label.text = str(ceil(time_left))
 	
 func end_game():
-	%"3DRunPlayer".position.y = -999
+	%"3DRunPlayer".position = Vector3(-999,-999,-999)
 	$WinScreen/Estate/AnimationPlayer.play("win")
 	$CameraHandle/Panel.visible = false
 
