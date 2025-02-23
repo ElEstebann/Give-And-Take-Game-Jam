@@ -4,7 +4,7 @@ extends Node3D
 
 #budget to be affected by difficulty
 #maximum of 24
-@onready var budget = 3
+@onready var budget = 3 + GameManager.difficulty -1
 var gen_budget = 0
 
 @onready var lanes = [$Lane1.position.x, 

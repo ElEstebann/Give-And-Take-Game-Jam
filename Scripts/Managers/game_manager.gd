@@ -2,6 +2,7 @@ extends Node
 
 
 const MAX_HEALTH = 4
+var difficulty = 1
 var score = 0
 var health = MAX_HEALTH
 
@@ -60,3 +61,8 @@ static func game_over():
 	instance.health = MAX_HEALTH
 	instance.get_tree().change_scene_to_file("res://Scenes/Managers/game_over.tscn")
 	
+static func difficulty_up():
+	instance.difficulty += 1
+	
+static func score_up():
+	instance.score += 1
