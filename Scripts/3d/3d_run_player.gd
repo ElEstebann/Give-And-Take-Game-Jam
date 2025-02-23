@@ -9,6 +9,9 @@ const GRAVITY_MULT = 2.5
 
 @export var invulnerable = false
 
+func _enter_tree():
+	add_to_group("3Dplayer")
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -39,7 +42,7 @@ func _on_hitbox_area_entered(area: Area3D) -> void:
 		on_damaged()
 	
 func on_damaged() -> void:
-	print("Damaged!")
+	#print("Damaged!")
 	animation_player.play("3d_player_damaged")
 	invulnerable = true
 	$InvulnerabilityTimer.start()
@@ -49,4 +52,4 @@ func _on_invulnerability_timer_timeout() -> void:
 	#animation_player.stop(false)
 	animation_player.play("normal")
 	invulnerable = false
-	print("timer done")
+	#print("timer done")

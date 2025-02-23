@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=3 uid="uid://d25ixh5qsgshu"]
+
+[ext_resource type="PackedScene" uid="uid://d0eliwflljsbc" path="res://Assets/3DModels/santa/scene.gltf" id="1_invjx"]
+[ext_resource type="Script" path="res://Scripts/3d/santa.gd" id="1_koayr"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t418v"]
+height = 2.48544
+
+[node name="Santa" type="Node3D"]
+script = ExtResource("1_koayr")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_invjx")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Sketchfab_Scene/Sketchfab_model/fbx_merge_fbx/Object_2/RootNode/Object_4" index="0"]
+bones/2/rotation = Quaternion(-0.0218782, 0, 0, 0.999761)
+bones/5/rotation = Quaternion(0.0218782, 0, 0, 0.999761)
+bones/8/rotation = Quaternion(-0.607218, -0.345398, 0.634924, -0.329937)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/rotation = Quaternion(0.260498, 0.0139043, -0.00375199, 0.965367)
+bones/10/rotation = Quaternion(0.0546209, 0.00453297, 0.082581, 0.995076)
+bones/11/rotation = Quaternion(0.0274134, -0.0988114, -0.0357755, 0.994085)
+bones/11/scale = Vector3(1, 1, 1)
+bones/12/scale = Vector3(1, 1, 1)
+bones/14/rotation = Quaternion(-0.00999902, -5.55057e-19, 5.55084e-17, 0.99995)
+bones/16/rotation = Quaternion(0.156273, 0.00682926, 0.0431217, 0.986749)
+bones/17/rotation = Quaternion(0.106008, 1.37996e-17, -1.47116e-18, 0.994365)
+bones/18/rotation = Quaternion(0.0303835, -7.779e-18, -2.75319e-17, 0.999538)
+bones/20/rotation = Quaternion(0.0263909, 0.000411253, 0.0155758, 0.99953)
+bones/22/rotation = Quaternion(-0.00780414, -6.93868e-18, -5.41521e-20, 0.99997)
+bones/22/scale = Vector3(1, 1, 1)
+bones/24/rotation = Quaternion(0.0562399, 0.000353568, 0.00627678, 0.998397)
+bones/25/rotation = Quaternion(0.173168, -1.12649e-17, 1.60713e-17, 0.984892)
+bones/26/rotation = Quaternion(0.0907767, 1.25978e-18, 1.38205e-17, 0.995871)
+bones/28/rotation = Quaternion(0.203587, -0.00689392, -0.0331332, 0.978472)
+bones/28/scale = Vector3(1, 1, 1)
+bones/32/scale = Vector3(1, 1, 1)
+bones/33/rotation = Quaternion(0.260721, -0.0606459, 0.0164129, 0.963368)
+bones/34/rotation = Quaternion(0.0445522, -0.00425813, -0.0950474, 0.994466)
+bones/34/scale = Vector3(1, 1, 1)
+bones/35/rotation = Quaternion(0.0140459, 0.154309, -0.00423428, 0.987914)
+bones/35/scale = Vector3(1, 1, 1)
+bones/36/rotation = Quaternion(0.18261, -0.0420298, -0.220324, 0.957259)
+bones/37/rotation = Quaternion(0.0856508, -9.07544e-18, -5.49357e-17, 0.996325)
+bones/38/rotation = Quaternion(-0.0367235, 1.38684e-17, 5.09641e-19, 0.999325)
+bones/40/rotation = Quaternion(0.164529, -0.000691778, -0.00414726, 0.986363)
+bones/40/scale = Vector3(1, 1, 1)
+bones/41/rotation = Quaternion(0.0979036, 3.16983e-17, 3.8716e-17, 0.995196)
+bones/42/rotation = Quaternion(-0.126265, -2.40289e-17, -3.1038e-17, 0.991997)
+bones/44/rotation = Quaternion(0.151374, -0.00449958, -0.0293692, 0.98803)
+bones/44/scale = Vector3(1, 1, 1)
+bones/45/rotation = Quaternion(0.0986892, 2.73918e-18, 2.76201e-17, 0.995118)
+bones/46/rotation = Quaternion(0.111149, 1.68768e-17, 2.60411e-17, 0.993804)
+bones/48/rotation = Quaternion(0.183291, 0.0050086, 0.0268528, 0.982679)
+bones/48/scale = Vector3(1, 1, 1)
+bones/49/rotation = Quaternion(0.117817, 3.08324e-17, 2.42922e-17, 0.993035)
+bones/50/rotation = Quaternion(0.0830282, 5.76269e-18, -1.4406e-17, 0.996547)
+bones/50/scale = Vector3(1, 1, 1)
+bones/52/rotation = Quaternion(0.192371, 0.02072, 0.105066, 0.975462)
+bones/53/rotation = Quaternion(0.11754, -1.5005e-17, -8.705e-18, 0.993068)
+bones/53/scale = Vector3(1, 1, 1)
+bones/54/scale = Vector3(1, 1, 1)
+bones/56/rotation = Quaternion(-0.00134122, -0.0344781, 0.998649, -0.038848)
+bones/57/rotation = Quaternion(0.0139095, -0.000102364, -0.00735838, 0.999876)
+bones/57/scale = Vector3(1, 1, 1)
+bones/58/rotation = Quaternion(0.445245, -0.0342506, 0.0170468, 0.894591)
+bones/58/scale = Vector3(1, 1, 1)
+bones/59/rotation = Quaternion(0.321941, -0.091708, 0.0313496, 0.941786)
+bones/59/scale = Vector3(1, 1, 1)
+bones/61/rotation = Quaternion(0.00121905, -0.0313246, 0.998753, 0.0388681)
+bones/61/scale = Vector3(1, 1, 1)
+bones/62/rotation = Quaternion(-0.00217241, -1.61429e-05, 0.00743072, 0.99997)
+bones/62/scale = Vector3(1, 1, 1)
+bones/63/rotation = Quaternion(0.453197, 0.0338014, -0.0172004, 0.890603)
+bones/63/scale = Vector3(1, 1, 1)
+bones/64/scale = Vector3(1, 1, 1)
+
+[node name="AnimationPlayer" parent="Sketchfab_Scene" index="1"]
+autoplay = "hello_wave"
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 1.16, 0.28)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CapsuleShape3D_t418v")
+
+[editable path="Sketchfab_Scene"]

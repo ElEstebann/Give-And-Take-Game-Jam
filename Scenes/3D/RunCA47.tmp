@@ -1,0 +1,280 @@
+[gd_scene load_steps=17 format=3 uid="uid://b116w88ukxx5a"]
+
+[ext_resource type="PackedScene" uid="uid://b36qhmnygyvj5" path="res://Scenes/3D/3d_run_player.tscn" id="1_0s5xi"]
+[ext_resource type="Script" path="res://Scripts/3d/3d_run_game.gd" id="1_47egi"]
+[ext_resource type="PackedScene" uid="uid://1tuichvfarrm" path="res://Scenes/3D/infinite_roads.tscn" id="2_v0wfc"]
+[ext_resource type="Texture2D" uid="uid://dneio4lrgc0c4" path="res://Assets/Textures/sky_panorama.jpg" id="3_ynpeg"]
+[ext_resource type="LabelSettings" uid="uid://but178veoep22" path="res://Assets/Settings/run_game_labels.tres" id="5_n70y5"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7t78y"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qbpv0"]
+panorama = ExtResource("3_ynpeg")
+
+[sub_resource type="Sky" id="Sky_xp6ls"]
+sky_material = SubResource("PanoramaSkyMaterial_qbpv0")
+
+[sub_resource type="Environment" id="Environment_iss0r"]
+background_mode = 2
+sky = SubResource("Sky_xp6ls")
+sky_rotation = Vector3(0, 3.14159, 0)
+
+[sub_resource type="Animation" id="Animation_de87n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:environment:sky_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gqsyf"]
+resource_name = "SpinSky"
+length = 360.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:environment:sky_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 360),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.28319, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_83n7w"]
+_data = {
+"RESET": SubResource("Animation_de87n"),
+"SpinSky": SubResource("Animation_gqsyf")
+}
+
+[sub_resource type="Animation" id="Animation_i0130"]
+resource_name = "game_start"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.526, 0), Vector3(0, 1.526, 0), Vector3(0, 1.101, -0.958)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.253073, 3.14159, 0), Vector3(0.253073, 3.14159, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 0.36, 1), Vector3(1, 0.36, 1), Vector3(1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Street Name:label_settings:font_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Street Name:label_settings:outline_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5h8ke"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.101, -0.958)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 0.36, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Street Name:label_settings:font_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Street Name:label_settings:outline_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3cm36"]
+_data = {
+"RESET": SubResource("Animation_5h8ke"),
+"game_start": SubResource("Animation_i0130")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_5xce6"]
+font_size = 71
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="RunGame" type="Node3D"]
+script = ExtResource("1_47egi")
+
+[node name="3DRunPlayer" parent="." groups=["3Dplayer"] instance=ExtResource("1_0s5xi")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.101, -0.958)
+
+[node name="World Collision" type="Node3D" parent="."]
+
+[node name="Floor" type="StaticBody3D" parent="World Collision"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World Collision/Floor"]
+shape = SubResource("WorldBoundaryShape3D_7t78y")
+
+[node name="Right" type="StaticBody3D" parent="World Collision"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World Collision/Right"]
+shape = SubResource("WorldBoundaryShape3D_7t78y")
+
+[node name="Left" type="StaticBody3D" parent="World Collision"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World Collision/Left"]
+shape = SubResource("WorldBoundaryShape3D_7t78y")
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 0.810706, 0.585453, 0, -0.585453, 0.810706, 0, 5.651, 0)
+
+[node name="InfiniteRoads" parent="." instance=ExtResource("2_v0wfc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.205, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_iss0r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WorldEnvironment"]
+libraries = {
+"": SubResource("AnimationLibrary_83n7w")
+}
+autoplay = "SpinSky"
+
+[node name="CameraHandle" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.36, 0, 0, 0, 1, 0, 1.101, -0.958)
+
+[node name="Camera3D" type="Camera3D" parent="CameraHandle"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 2.14175, 2.56961)
+far = 100.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CameraHandle"]
+libraries = {
+"": SubResource("AnimationLibrary_3cm36")
+}
+autoplay = "game_start"
+
+[node name="Street Name" type="Label" parent="CameraHandle"]
+offset_right = 1154.0
+offset_bottom = 653.0
+text = "GO TO"
+label_settings = ExtResource("5_n70y5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="CameraHandle"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1044.0
+offset_right = 1.0
+offset_bottom = -550.0
+
+[node name="Label" type="Label" parent="CameraHandle/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -3.0
+offset_bottom = 8.0
+text = "00"
+label_settings = SubResource("LabelSettings_5xce6")
+horizontal_alignment = 1

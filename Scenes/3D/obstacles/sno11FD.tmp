@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1cdsc80o265c"]
+
+[ext_resource type="PackedScene" uid="uid://decc668kgdgv" path="res://Assets/3DModels/snowman/source/Snowman.glb" id="1_7ndas"]
+[ext_resource type="Script" path="res://Scripts/3d/snowman.gd" id="1_o1wiy"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xvyut"]
+radius = 20.4559
+height = 71.4196
+
+[node name="Snowman" type="Node3D"]
+script = ExtResource("1_o1wiy")
+
+[node name="Snowman" parent="." instance=ExtResource("1_7ndas")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.124603, 0, 0)
+
+[node name="Skeleton3D" parent="Snowman" index="0"]
+bones/1/rotation = Quaternion(0, 0, -0.707107, 0.707107)
+bones/2/rotation = Quaternion(-0.5, -0.5, -0.5, 0.5)
+bones/3/rotation = Quaternion(-2.08048e-06, -7.29584e-07, 0.000398159, 1)
+bones/5/rotation = Quaternion(-2.17203e-11, -2.95464e-08, -0.000398831, 1)
+bones/6/rotation = Quaternion(0.649876, 0.349172, 0.455049, -0.498669)
+bones/7/rotation = Quaternion(-0.579352, 0.316541, 0.730503, 0.174695)
+bones/8/rotation = Quaternion(0.251646, -0.697542, 0.103588, 0.662857)
+bones/9/rotation = Quaternion(-0.159984, -0.576423, 0.3716, 0.709969)
+bones/10/rotation = Quaternion(0.243789, 0.751702, 0.479119, -0.382043)
+bones/11/rotation = Quaternion(-0.122788, -0.696364, -0.122788, 0.696364)
+bones/12/rotation = Quaternion(0.500001, 0.499999, 0.499999, 0.500001)
+
+[node name="Area3D" type="Area3D" parent="Snowman"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Snowman/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 33.8715, 0)
+shape = SubResource("CapsuleShape3D_xvyut")
+
+[editable path="Snowman"]

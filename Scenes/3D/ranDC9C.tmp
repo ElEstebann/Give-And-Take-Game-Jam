@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://brpw3j4006wm3"]
+
+[ext_resource type="Script" path="res://Scripts/3d/random_obstacles.gd" id="1_0q3nn"]
+[ext_resource type="PackedScene" uid="uid://cfq4krrhtwob8" path="res://Scenes/3D/obstacles/fallen_tree.tscn" id="1_5jx8y"]
+[ext_resource type="PackedScene" uid="uid://dpb585qlf42ia" path="res://Scenes/3D/obstacles/random_car.tscn" id="2_2hk38"]
+[ext_resource type="PackedScene" uid="uid://d25ixh5qsgshu" path="res://Scenes/3D/obstacles/santa.tscn" id="3_saqjt"]
+[ext_resource type="PackedScene" uid="uid://c1cdsc80o265c" path="res://Scenes/3D/obstacles/snowman.tscn" id="4_3280s"]
+[ext_resource type="PackedScene" uid="uid://d2mddu0s68udh" path="res://Scenes/3D/obstacles/spike_trap.tscn" id="5_q7rix"]
+
+[node name="RandomObstacle" type="Node3D"]
+script = ExtResource("1_0q3nn")
+
+[node name="Trees" type="Node3D" parent="."]
+
+[node name="FallenTree" parent="Trees" instance=ExtResource("1_5jx8y")]
+
+[node name="FallenTree2" parent="Trees" instance=ExtResource("1_5jx8y")]
+
+[node name="FallenTree3" parent="Trees" instance=ExtResource("1_5jx8y")]
+
+[node name="FallenTree4" parent="Trees" instance=ExtResource("1_5jx8y")]
+
+[node name="Santas" type="Node3D" parent="."]
+
+[node name="Santa" parent="Santas" instance=ExtResource("3_saqjt")]
+
+[node name="Santa2" parent="Santas" instance=ExtResource("3_saqjt")]
+
+[node name="Snowmen" type="Node3D" parent="."]
+
+[node name="Snowman" parent="Snowmen" instance=ExtResource("4_3280s")]
+
+[node name="Snowman2" parent="Snowmen" instance=ExtResource("4_3280s")]
+
+[node name="Snowman3" parent="Snowmen" instance=ExtResource("4_3280s")]
+
+[node name="Snowman4" parent="Snowmen" instance=ExtResource("4_3280s")]
+
+[node name="Spikes" type="Node3D" parent="."]
+
+[node name="SpikeTrap" parent="Spikes" instance=ExtResource("5_q7rix")]
+
+[node name="SpikeTrap2" parent="Spikes" instance=ExtResource("5_q7rix")]
+
+[node name="SpikeTrap3" parent="Spikes" instance=ExtResource("5_q7rix")]
+
+[node name="SpikeTrap4" parent="Spikes" instance=ExtResource("5_q7rix")]
+
+[node name="Cars" type="Node3D" parent="."]
+
+[node name="RandomCar" parent="Cars" instance=ExtResource("2_2hk38")]
+
+[node name="RandomCar2" parent="Cars" instance=ExtResource("2_2hk38")]

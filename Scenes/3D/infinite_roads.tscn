@@ -8,6 +8,9 @@ script = ExtResource("1_u77fo")
 
 [node name="Chunks" type="Node3D" parent="."]
 
+[node name="RoadChunk6" parent="Chunks" instance=ExtResource("1_l4vvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 56.962)
+
 [node name="RoadChunk" parent="Chunks" instance=ExtResource("1_l4vvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 28.481)
 
@@ -21,6 +24,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -56.962)
 
 [node name="RoadChunk4" parent="Chunks" instance=ExtResource("1_l4vvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -85.443)
+obstacles_on_start = true
 
 [node name="RoadChunk5" parent="Chunks" instance=ExtResource("1_l4vvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -113.924)
+obstacles_on_start = true

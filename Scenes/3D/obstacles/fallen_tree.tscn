@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfq4krrhtwob8"]
+
+[ext_resource type="PackedScene" uid="uid://d1ek4e86oqlyc" path="res://Assets/3DModels/kenney_holiday-kit/Models/GLB format/tree.glb" id="1_htkm7"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_sxbks"]
+height = 1.80277
+radius = 0.203526
+
+[node name="FallenTree" type="Node3D"]
+
+[node name="tree2" parent="." instance=ExtResource("1_htkm7")]
+transform = Transform3D(-8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 0, 0, 2, 1.19744, 0.251994, -0.0217376)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(-8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 0, 0, 2, -0.802561, 0.251994, 0.435212)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0578613, -0.0660146, -0.171814)
+shape = SubResource("CylinderShape3D_sxbks")
