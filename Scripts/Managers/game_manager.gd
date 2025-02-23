@@ -75,9 +75,9 @@ static func difficulty_up():
 	difficulty_update()
 	
 static func difficulty_update():
-	instance.grinch_chiptune.pitch_scale = 1 + (float(instance.difficulty) / 50.0)
-	instance.grinch_theme.pitch_scale = 1 + (float(instance.difficulty) / 50.0)
-	Engine.time_scale = 1 + (float(instance.difficulty) / 50.0)
+	instance.grinch_chiptune.pitch_scale = 1 + (float(instance.difficulty - 1) / 50.0)
+	instance.grinch_theme.pitch_scale = 1 + (float(instance.difficulty - 1) / 50.0)
+	Engine.time_scale = 1 + (float(instance.difficulty - 1) / 50.0)
 	
 static func score_up():
 	instance.score += 1
