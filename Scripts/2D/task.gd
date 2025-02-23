@@ -2,14 +2,14 @@ class_name Task extends TaskManager
 
 func _ready() -> void:
 	
-	if get_tree().current_scene.name != "TestMain":
+	"""if get_tree().current_scene.name != "TestMain":
 		TaskLog.visible = false
 		task_status = TaskStatus.not2D
 	if get_tree().current_scene.name == "TestMain":
 		TaskLog.visible = true
 		task_status = TaskStatus.inprogress
 		TaskTitle.text = task_name
-		Completion.text = task_description
+		Completion.text = task_description"""
 
 func _process(_delta: float) -> void:
 	if task_status == TaskStatus.inprogress:

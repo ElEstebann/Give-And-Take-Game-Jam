@@ -79,6 +79,7 @@ func _set_presents_label(num_left : int) -> void:
 	if num_left <= 0:
 		var c = valid_color.to_html(false)
 		text = "[color=#%s]CONGRATULATIONS!![/color]" % c
+		get_tree().change_scene_to_file("res://Scenes/3D/RunGame.tscn")
 	else:
 		var c = invalid_color.to_html(false)
 		text = "Place [color=#%s]%d more[/color] presents" % [c, num_left]
